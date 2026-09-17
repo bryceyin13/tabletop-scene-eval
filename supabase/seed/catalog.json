@@ -1,0 +1,1805 @@
+{
+  "version": 1,
+  "scenes": [
+    {
+      "scene_id": "S001",
+      "tier": "perfect",
+      "reference_asset": "c8bd910273b86202d0af925f.webp",
+      "candidate_assets": [
+        "f9a95514573f5e33ecf67f6b.webp",
+        "54b2e483b41298c90919e767.webp",
+        "766884fcd63b301faa584ff2.webp",
+        "225f8d126a5068b21e1837e6.webp",
+        "7ec511302b06262c9450d794.webp"
+      ]
+    },
+    {
+      "scene_id": "S002",
+      "tier": "perfect",
+      "reference_asset": "73b3bc32945d8cdfbe11864c.webp",
+      "candidate_assets": [
+        "3af0961f2e4336ef9e796f4e.webp",
+        "54411596f11b72b26e96d70d.webp",
+        "17e6380c466a704962203eee.webp",
+        "0c37665f9113264e58ecd964.webp",
+        "561f25b41538df726301298d.webp"
+      ]
+    },
+    {
+      "scene_id": "S003",
+      "tier": "perfect",
+      "reference_asset": "a1d0961eb07d19e350649347.webp",
+      "candidate_assets": [
+        "9fdb7eede4014af71007563c.webp",
+        "de052b418866379e2446e2ff.webp",
+        "b0cc7e2eeaac960c73fdfe3a.webp",
+        "066cc405644b846c520c3f35.webp",
+        "e9a5917a6bafe9d6f085b4dc.webp"
+      ]
+    },
+    {
+      "scene_id": "S004",
+      "tier": "perfect",
+      "reference_asset": "1cc309f4eb462a4926899f9d.webp",
+      "candidate_assets": [
+        "c3885cd957da8f1f823ec7c8.webp",
+        "c1516b6476d70bfb63d6c5ed.webp",
+        "ed331419ed481570ebe55ce4.webp",
+        "dd1412ef6313d5f578c75a2e.webp",
+        "d9493bc697394c9493506a4e.webp"
+      ]
+    },
+    {
+      "scene_id": "S005",
+      "tier": "perfect",
+      "reference_asset": "c7bafbc27e242f19bbe25226.webp",
+      "candidate_assets": [
+        "9e55fee9a54f0726282118cc.webp",
+        "05773c8e0401e2547e279dce.webp",
+        "e1ff4f13def02071a0b16c91.webp",
+        "9031e122971f717b7b52a859.webp",
+        "93424e3ddbb5d68cce9658f6.webp"
+      ]
+    },
+    {
+      "scene_id": "S006",
+      "tier": "perfect",
+      "reference_asset": "7d1c0f70ecad887e2b123f38.webp",
+      "candidate_assets": [
+        "13423185a829cb80d1663114.webp",
+        "01b2be9b44dbb59c049c816e.webp",
+        "2576fcb58335bce81725fe94.webp",
+        "c01827650621764852a21277.webp",
+        "9e578c3ed86fe601cb7b381d.webp"
+      ]
+    },
+    {
+      "scene_id": "S007",
+      "tier": "perfect",
+      "reference_asset": "ad9e80df14e5e0dc8dcdffb0.webp",
+      "candidate_assets": [
+        "80250d488c83a85e53b1ffb1.webp",
+        "bfe58c6c28b246a088503d21.webp",
+        "1a0efa99ecf6772b8e0140d9.webp",
+        "6e1f0c8394349beb20a13e3c.webp",
+        "42e5d51b6d20668fdbc928c8.webp"
+      ]
+    },
+    {
+      "scene_id": "S008",
+      "tier": "perfect",
+      "reference_asset": "f609b2b7583a40182bd087b1.webp",
+      "candidate_assets": [
+        "b485c3d5b6b4c35258eea31b.webp",
+        "6262169438407089345aabc4.webp",
+        "219cf74dc503f01612c1dfac.webp",
+        "d57f21f4dfe3c8536802a363.webp",
+        "d108d4ea826a185fed1aa3bd.webp"
+      ]
+    },
+    {
+      "scene_id": "S009",
+      "tier": "perfect",
+      "reference_asset": "03a4921766e74c2f7203f88c.webp",
+      "candidate_assets": [
+        "31c82fdcb5ab06b5be0af003.webp",
+        "f550eeab037951575d8c8505.webp",
+        "3d8ab8d590d59caf26b075e9.webp",
+        "c3d410964cb832c1a7f5f545.webp",
+        "441524c0e5bde7bca1d71aa2.webp"
+      ]
+    },
+    {
+      "scene_id": "S010",
+      "tier": "perfect",
+      "reference_asset": "2733c5a392077bf3f217c46b.webp",
+      "candidate_assets": [
+        "92cec0329df8f53ca06c82b2.webp",
+        "0c2665963a3684a05462b8b1.webp",
+        "1a75c909a5832d95ede0ef85.webp",
+        "2b9674d56fd8f82f9d0b80a2.webp",
+        "c72d1b04d27b522ccf78efcc.webp"
+      ]
+    },
+    {
+      "scene_id": "S011",
+      "tier": "perfect",
+      "reference_asset": "396129476563d51b43b04605.webp",
+      "candidate_assets": [
+        "0aac94bf6afa3601b375e82b.webp",
+        "c235e82b9d948265e221ad17.webp",
+        "f34c077d9105033a75aa05b6.webp",
+        "76b404dd745f2e4c95ae9dfe.webp",
+        "cdc28ce38dc3451dc6ebcf61.webp"
+      ]
+    },
+    {
+      "scene_id": "S012",
+      "tier": "perfect",
+      "reference_asset": "9c3c19764b54151d0e830dcf.webp",
+      "candidate_assets": [
+        "ef43ece6136e2f6e30145443.webp",
+        "b713e31c1d0e679a33a1ccd2.webp",
+        "825dd5e8f4f894eb3048dfbc.webp",
+        "79bbcf29bdc4f2e9ff37f028.webp",
+        "16100e27c243924c5a70e91c.webp"
+      ]
+    },
+    {
+      "scene_id": "S013",
+      "tier": "perfect",
+      "reference_asset": "6591160e17a88bb3ee495616.webp",
+      "candidate_assets": [
+        "b01d4a4fc614fb6ca55a05b0.webp",
+        "04121ac6feec85a8f2b91e64.webp",
+        "9363ee4abf4fc74addbcf670.webp",
+        "fc6475a98e8e81b08cc66a6a.webp",
+        "5f5d46a878d46733173bf8aa.webp"
+      ]
+    },
+    {
+      "scene_id": "S014",
+      "tier": "perfect",
+      "reference_asset": "4b4ebebdd7282c6bc3069980.webp",
+      "candidate_assets": [
+        "d2b031717baac847318f4e2a.webp",
+        "1769ba4e39a6db5c8de87e03.webp",
+        "f16d51c5ad469dcfa4866355.webp",
+        "4f55a3d606c91489813161c5.webp",
+        "50bea98a28247ca5c4382abe.webp"
+      ]
+    },
+    {
+      "scene_id": "S015",
+      "tier": "perfect",
+      "reference_asset": "e441f4551b7bf4a0a55f11ee.webp",
+      "candidate_assets": [
+        "a03ba61839204e63a462cedf.webp",
+        "3230d42c89becbe528804352.webp",
+        "80d751e03548bb724d3c5bb8.webp",
+        "90c8fa262d582df547a4571e.webp",
+        "6653a204b9b678397ccdbcc4.webp"
+      ]
+    },
+    {
+      "scene_id": "S016",
+      "tier": "perfect",
+      "reference_asset": "f3ffd1b60511b8842a51bd59.webp",
+      "candidate_assets": [
+        "f4236572e9ae00e13ab0d159.webp",
+        "7224936b30be4691d1d5b6f9.webp",
+        "1e9877fe19d0d9613c252a8d.webp",
+        "84ce868a3e2d010a04038ab6.webp",
+        "eb51919070d34296a6c4ce85.webp"
+      ]
+    },
+    {
+      "scene_id": "S017",
+      "tier": "perfect",
+      "reference_asset": "905de21671b28f19e9659647.webp",
+      "candidate_assets": [
+        "5ed7232ae99f29f210622f80.webp",
+        "ea30b19a00cfae8a842b759c.webp",
+        "38c96359d61782ae490ab61d.webp",
+        "c59dee9efa3d6401c16baaf3.webp",
+        "3447fddb663e916b1466eb45.webp"
+      ]
+    },
+    {
+      "scene_id": "S018",
+      "tier": "perfect",
+      "reference_asset": "4c429dbdeb38a374a5ec6681.webp",
+      "candidate_assets": [
+        "478179c72cef473b54c02627.webp",
+        "1a65f8129f05d09e27920816.webp",
+        "f3b31d44c7c9a71737acecac.webp",
+        "8a356d99d685dba28f87ff65.webp",
+        "4343021e50f2bf799c49ea83.webp"
+      ]
+    },
+    {
+      "scene_id": "S019",
+      "tier": "perfect",
+      "reference_asset": "f0117040fa10e6e95662f862.webp",
+      "candidate_assets": [
+        "ded981a1bcafd3bdd8ff7cfc.webp",
+        "41a543a81e48a38cbe21d0cc.webp",
+        "d9babafd534d4e29f48ccd94.webp",
+        "1cbc76d8b0239602d6175a20.webp",
+        "c3cf67558ce76342dfa1808c.webp"
+      ]
+    },
+    {
+      "scene_id": "S020",
+      "tier": "perfect",
+      "reference_asset": "18b41fd5b61e34f6a2c1810c.webp",
+      "candidate_assets": [
+        "1c8db58b5aca9ee41e0a8577.webp",
+        "2e0e0e9d4d3bc000b557a3e9.webp",
+        "167ba5184006d9c7ee963b90.webp",
+        "505eeeb142a564047586c7d0.webp",
+        "15ced0fb2db6da5e764ba3fc.webp"
+      ]
+    },
+    {
+      "scene_id": "S021",
+      "tier": "perfect",
+      "reference_asset": "56ead7dd046a95965ccd42f6.webp",
+      "candidate_assets": [
+        "49ac38976290fe96f18c33d0.webp",
+        "e2c982af06a7c7ed29ee06c2.webp",
+        "9d7b8365dfdf3644e094fcd8.webp",
+        "ec4a75663a0cb7bdad81fb85.webp",
+        "b7b12e37560235e78b6e9666.webp"
+      ]
+    },
+    {
+      "scene_id": "S022",
+      "tier": "perfect",
+      "reference_asset": "7b535a98bd26392e7abfee41.webp",
+      "candidate_assets": [
+        "deebcfd156579b61a6b8e432.webp",
+        "6144df5a66ae04de05374e01.webp",
+        "7c82113a137aa5fb81eece84.webp",
+        "7049deef762c1b821220b440.webp",
+        "4bbe36ed9c68a7fc363b7016.webp"
+      ]
+    },
+    {
+      "scene_id": "S023",
+      "tier": "perfect",
+      "reference_asset": "4f0290ae313f763996b9ce66.webp",
+      "candidate_assets": [
+        "55dae5ea8d3c425c6a3f3e81.webp",
+        "f7a914f4a17b3c9d7b9ef2f3.webp",
+        "be1b2cc0a78131c98bade391.webp",
+        "68f05d5559f70fd710c2675f.webp",
+        "3fabbcc905776f53e92a2b9a.webp"
+      ]
+    },
+    {
+      "scene_id": "S024",
+      "tier": "perfect",
+      "reference_asset": "5beb167d75067cbbd22813cd.webp",
+      "candidate_assets": [
+        "0d8010fa47a74035410dfbda.webp",
+        "a7d009ef56a2bb02f12d6267.webp",
+        "db62f265597b57cc951aef61.webp",
+        "3771642b06b2cbbfbe892b79.webp",
+        "3563447e671f25d09c83fae5.webp"
+      ]
+    },
+    {
+      "scene_id": "S025",
+      "tier": "perfect",
+      "reference_asset": "6470d336895d9a43db3bfc7b.webp",
+      "candidate_assets": [
+        "71aac97c2b7f9c03702fd315.webp",
+        "38ce033a2f416655302fbc6d.webp",
+        "732e867f817a65045eaf0dc4.webp",
+        "b46ecf87504ff8b583848421.webp",
+        "bff89d1b26ffa9ec6ae61827.webp"
+      ]
+    },
+    {
+      "scene_id": "S026",
+      "tier": "perfect",
+      "reference_asset": "16b6df4444d4e9b968307f4b.webp",
+      "candidate_assets": [
+        "35f0073e01bc00767fcd3b10.webp",
+        "ba668adc3f35c4d7f95c7cf3.webp",
+        "f54db1c63e3569fc3cfc1331.webp",
+        "6fe95f5e8e213654a0d29cd2.webp",
+        "cad5b065995aace4448bf032.webp"
+      ]
+    },
+    {
+      "scene_id": "S027",
+      "tier": "perfect",
+      "reference_asset": "e223615b61cb86df70902356.webp",
+      "candidate_assets": [
+        "313f7306cb86f9f49887b840.webp",
+        "3670566a6957f87487f676a1.webp",
+        "377e19a2099d5bc7c084b753.webp",
+        "621a0f43b6141522b064543d.webp",
+        "1bb3dd416be6f68a4d914b63.webp"
+      ]
+    },
+    {
+      "scene_id": "S028",
+      "tier": "perfect",
+      "reference_asset": "b6730645b4b117b435e82ee8.webp",
+      "candidate_assets": [
+        "6215d689fedd5e107d49fca1.webp",
+        "c2457cfe8a45cd58bb6e157f.webp",
+        "550060f495356f0f76410e08.webp",
+        "175cde5c0791b115ed9ca155.webp",
+        "f43b23a2f474459f6b44b848.webp"
+      ]
+    },
+    {
+      "scene_id": "S029",
+      "tier": "perfect",
+      "reference_asset": "04f8b2a9de618cca9e0b7f5a.webp",
+      "candidate_assets": [
+        "ddf8315ddb864acb20c8d60a.webp",
+        "8031e019ecdc9df3c1761106.webp",
+        "9f4df756c2d554a26c2f752e.webp",
+        "eba8330c75c5df58ff860f35.webp",
+        "e942dfbc366b8c37e2b1b1ed.webp"
+      ]
+    },
+    {
+      "scene_id": "S030",
+      "tier": "perfect",
+      "reference_asset": "f3966942d219d3fecea53b82.webp",
+      "candidate_assets": [
+        "7f4d0a9ed01551ec8e9c5035.webp",
+        "33b067c9868a112445f601b5.webp",
+        "52e229d5e7778239cad66b92.webp",
+        "7ce6505acce6894254948087.webp",
+        "3a06ae9b96e5c88dea0fc270.webp"
+      ]
+    },
+    {
+      "scene_id": "S031",
+      "tier": "perfect",
+      "reference_asset": "78d4226a4ae69bedafac11f9.webp",
+      "candidate_assets": [
+        "eaa49a9a3ec779698a465b94.webp",
+        "c422c681eab33429ef8db1ba.webp",
+        "fd2fe14aff35f7fbe9f2f0dd.webp",
+        "069a8f24b3dc0c483a3aef6e.webp",
+        "5827f64a3235ff2d5a461a6d.webp"
+      ]
+    },
+    {
+      "scene_id": "S032",
+      "tier": "perfect",
+      "reference_asset": "88825cfbd42af6297ceee66b.webp",
+      "candidate_assets": [
+        "621a0a029ac390b119810932.webp",
+        "69c37a4c02b727d1eb137629.webp",
+        "005e27e604f4b13bd9e37ceb.webp",
+        "ce2521e741e8efb2f259826b.webp",
+        "874c125f6cbbde62deb95b89.webp"
+      ]
+    },
+    {
+      "scene_id": "S033",
+      "tier": "perfect",
+      "reference_asset": "1392f13b7bf50af97a63dbc4.webp",
+      "candidate_assets": [
+        "fb1e44505c68c287c23f74e5.webp",
+        "f48ff55d905d6a449c84602b.webp",
+        "61a620c21371f9e3f734bd0a.webp",
+        "1d0e7ff6ce5580f3eb0f5415.webp",
+        "fb5325872ab5fdfb8d595397.webp"
+      ]
+    },
+    {
+      "scene_id": "S034",
+      "tier": "perfect",
+      "reference_asset": "6e791b3252b9f09d61e2cae4.webp",
+      "candidate_assets": [
+        "36f43d61e734a28e4e29735c.webp",
+        "52055fa0f81428c7c9d48d5d.webp",
+        "a13a5d04c6291f0598053c65.webp",
+        "dae2867cdd2e4f5a7743067d.webp",
+        "e5a58fe1e0ef1d01b862e1a3.webp"
+      ]
+    },
+    {
+      "scene_id": "S035",
+      "tier": "perfect",
+      "reference_asset": "107e75dd16f7a22ffec6abb6.webp",
+      "candidate_assets": [
+        "1aa65e38177184f095ae7af7.webp",
+        "9608d40d54fc53f95a031c6f.webp",
+        "0a7c6ecfd5e3490c90f0582f.webp",
+        "cb3d7d57c2e9c60123083847.webp",
+        "5dd38414646494db71f35c35.webp"
+      ]
+    },
+    {
+      "scene_id": "S036",
+      "tier": "perfect",
+      "reference_asset": "9c6c859d3615ed3a54e37ecb.webp",
+      "candidate_assets": [
+        "2d0efcc0e349374ddcfb837d.webp",
+        "c6b1e423146c49ac2dd413f7.webp",
+        "b30e1f6e55d50fc78e2a9a04.webp",
+        "a12df43ecedd3d9e4cab360f.webp",
+        "5b7281f5841f38c1ba13f727.webp"
+      ]
+    },
+    {
+      "scene_id": "S037",
+      "tier": "perfect",
+      "reference_asset": "84b226578ec9646e1a82fa57.webp",
+      "candidate_assets": [
+        "3dbe10cf5ba28cb5cebe5997.webp",
+        "7111dc61f99b5fcfd9d63591.webp",
+        "052d42f814f37caffe101656.webp",
+        "9ab2256a092a47536598bd01.webp",
+        "c1db58f1c5b23c06d92304a0.webp"
+      ]
+    },
+    {
+      "scene_id": "S038",
+      "tier": "perfect",
+      "reference_asset": "74af41aabade910bd934eb71.webp",
+      "candidate_assets": [
+        "9b44a665372cc3adcaf6f940.webp",
+        "eb991d39229ad6e50dd2f874.webp",
+        "dde4dd29df0abab549d13873.webp",
+        "050febce8303bbde9a627bf3.webp",
+        "00096e6659c526488d8ed8e2.webp"
+      ]
+    },
+    {
+      "scene_id": "S039",
+      "tier": "perfect",
+      "reference_asset": "5cf6e682f54ec21acd555e0a.webp",
+      "candidate_assets": [
+        "ff48ef1e7118e44a5932f6aa.webp",
+        "6f7765f385808d4ea2b61790.webp",
+        "1cfe1b7d2e2c95ccab7c2567.webp",
+        "1d5e9cac14ae3ac121afedc4.webp",
+        "bf28e31153e7864f9e09be2a.webp"
+      ]
+    },
+    {
+      "scene_id": "S040",
+      "tier": "perfect",
+      "reference_asset": "d5bc3e1b77ee9c574a6882c7.webp",
+      "candidate_assets": [
+        "8b3dcb06a3fcbeb66a4e396a.webp",
+        "13142ed1a5dff2d92549bbae.webp",
+        "ee7b6162e039ac2159e9ae4d.webp",
+        "03ab8a3895fc061fdded92d4.webp",
+        "664938dfb22b1b0ff51559ea.webp"
+      ]
+    },
+    {
+      "scene_id": "S041",
+      "tier": "perfect",
+      "reference_asset": "4deccc7cd149337e7ae7272e.webp",
+      "candidate_assets": [
+        "0dc11ab4b14391b969edb273.webp",
+        "9740463b61ba9fc01d498268.webp",
+        "9f909031749ffcc05e71a74b.webp",
+        "827401140173601fe865312e.webp",
+        "af333963e40f1b95a63ac651.webp"
+      ]
+    },
+    {
+      "scene_id": "S042",
+      "tier": "perfect",
+      "reference_asset": "5c0a05849179800bd77cc76c.webp",
+      "candidate_assets": [
+        "6e3cf09dfc53f1e65ea2b2c9.webp",
+        "c79c970b0f5b795dd379c848.webp",
+        "1e12fc692e5b58e5babac765.webp",
+        "729dac1d8bfcc54871d73fa0.webp",
+        "e13d4df74ba8b9c9bded5c6c.webp"
+      ]
+    },
+    {
+      "scene_id": "S043",
+      "tier": "perfect",
+      "reference_asset": "fca1f6b3baf559df18d15615.webp",
+      "candidate_assets": [
+        "b268b916a7b6f279c61a08ef.webp",
+        "8a5e94375afdeb2a14dc7c5d.webp",
+        "d752cdd27db96c38df3a3314.webp",
+        "ba0f29bce98a9817ed2ae476.webp",
+        "65986f8498dd0173b9cd0ca7.webp"
+      ]
+    },
+    {
+      "scene_id": "S044",
+      "tier": "perfect",
+      "reference_asset": "82efbbe9a3806129df936ad6.webp",
+      "candidate_assets": [
+        "04bdffc5ba8069dd3c46963c.webp",
+        "ab97d3d8f516362873b23eae.webp",
+        "9d288cb3cea1829cd8894c16.webp",
+        "748762cd585d723b97a09878.webp",
+        "cf8ac7e14648ccec39db04f4.webp"
+      ]
+    },
+    {
+      "scene_id": "S045",
+      "tier": "perfect",
+      "reference_asset": "ea08a79d75e7b6bab037bdff.webp",
+      "candidate_assets": [
+        "c028147c57d94b95f52692d7.webp",
+        "7864aa70c5ed0df349326ebd.webp",
+        "064cb76a75d10dda882e8209.webp",
+        "8a1c8e69a787fdd6ef5ab198.webp",
+        "ab034cad04700e8a9ce5da06.webp"
+      ]
+    },
+    {
+      "scene_id": "S046",
+      "tier": "perfect",
+      "reference_asset": "6ac08fb0df98f3bd11e53216.webp",
+      "candidate_assets": [
+        "e7a36c94d6ef06494ca62af5.webp",
+        "2942e2ed65b82e5871f83bb5.webp",
+        "b051c8bd4b744ad52a69ebe2.webp",
+        "4a12b2b283e5238dbc3fa5dd.webp",
+        "5f08367f8f8f603b50970e40.webp"
+      ]
+    },
+    {
+      "scene_id": "S047",
+      "tier": "perfect",
+      "reference_asset": "a67ff547c8bb34e7fb3a4fb2.webp",
+      "candidate_assets": [
+        "bc9ea5ce43834057661811db.webp",
+        "6de78df94168d35e571b1f26.webp",
+        "6463c30460c45125d9f5fe14.webp",
+        "a6e2623df8a21df8bea57d71.webp",
+        "1470e6dca181cae3662f3dfc.webp"
+      ]
+    },
+    {
+      "scene_id": "S048",
+      "tier": "perfect",
+      "reference_asset": "9c81bec9e80c8901f91b6c2d.webp",
+      "candidate_assets": [
+        "be5b31782efa6514976c359e.webp",
+        "64c884a7f4495233592ca405.webp",
+        "cc06539636c9b61103635990.webp",
+        "4b676b4338a912b12aa70333.webp",
+        "eb0b14e6db4f31462c478cd2.webp"
+      ]
+    },
+    {
+      "scene_id": "S049",
+      "tier": "perfect",
+      "reference_asset": "385f041c8d95b4517c6a41d5.webp",
+      "candidate_assets": [
+        "2e9f5bb2bfb301e28259e111.webp",
+        "042d675fe268ff3c2ce46d00.webp",
+        "175f286e29f596675a2e156a.webp",
+        "cb4b62048b9dec013e253f31.webp",
+        "032b8c5910e500579fa46204.webp"
+      ]
+    },
+    {
+      "scene_id": "S050",
+      "tier": "perfect",
+      "reference_asset": "eca6a42fb0d0b26c00f36a5e.webp",
+      "candidate_assets": [
+        "0c559dedfac03d506cdb5fa6.webp",
+        "7d6c4f5bc976bd2297adb496.webp",
+        "43bbd5c44deabcbed02de66d.webp",
+        "a4ef76e460a63e5bbf2d295b.webp",
+        "ccdac4b57578909d94c761e4.webp"
+      ]
+    },
+    {
+      "scene_id": "S051",
+      "tier": "perfect",
+      "reference_asset": "30a7ce5c27b43548a959ba09.webp",
+      "candidate_assets": [
+        "2a9768798be4156333a9e240.webp",
+        "e12d5795d419dd7f4c24f835.webp",
+        "ab2c8291ef2a136348d2faac.webp",
+        "6f48c8041f4bdb6f08fb2073.webp",
+        "3e2a66795912d7b8798c8432.webp"
+      ]
+    },
+    {
+      "scene_id": "S052",
+      "tier": "perfect",
+      "reference_asset": "1f757e58e4a1ac1dce026e12.webp",
+      "candidate_assets": [
+        "23b34aab4b0cfacf36437bd0.webp",
+        "df44e7e8d142d467ae4aedc5.webp",
+        "2ffd4a6747aa0df7bfe7df6c.webp",
+        "6c45c9cd618bc3ebee68dafd.webp",
+        "945c185063011224466ec2dc.webp"
+      ]
+    },
+    {
+      "scene_id": "S053",
+      "tier": "perfect",
+      "reference_asset": "1776122f5c15f3cc01c009c1.webp",
+      "candidate_assets": [
+        "7233848bdac8d6ffec8dd705.webp",
+        "e89ebc32948357650bf70293.webp",
+        "b2a875ea1f9e491205b801af.webp",
+        "9f119d2e07df3fb6cc16d713.webp",
+        "2c5316ef3bda8291a31647ba.webp"
+      ]
+    },
+    {
+      "scene_id": "S054",
+      "tier": "perfect",
+      "reference_asset": "28c2f78259fe96b561b38fb5.webp",
+      "candidate_assets": [
+        "bc1a915ac95df7763854cf3f.webp",
+        "1b74b7eed96f5468e5b3f1bb.webp",
+        "0ba9a679b8c8f9ccd0edbd33.webp",
+        "fbac76f39f33570a771791b5.webp",
+        "6621384cafe856222b2de2bf.webp"
+      ]
+    },
+    {
+      "scene_id": "S055",
+      "tier": "perfect",
+      "reference_asset": "04953f3f1bbe9a036b1359a8.webp",
+      "candidate_assets": [
+        "d9d32a652072d351a1dc87b0.webp",
+        "ca3100f62893a14c2f5a983e.webp",
+        "941de4aecc854a6f7387e13c.webp",
+        "40ffc5073a149fbb9fe6b368.webp",
+        "9c49bf250965802a6dc1d9ac.webp"
+      ]
+    },
+    {
+      "scene_id": "S056",
+      "tier": "perfect",
+      "reference_asset": "188595b4d323146a1e6cea72.webp",
+      "candidate_assets": [
+        "5e58e645dec817ab4cef0e0e.webp",
+        "7f5f520ecbef484c4f0fd862.webp",
+        "916cccc09abc8265a359db87.webp",
+        "3d05d5b58ce83f960382065a.webp",
+        "cef42812caedce7e31724191.webp"
+      ]
+    },
+    {
+      "scene_id": "S057",
+      "tier": "perfect",
+      "reference_asset": "e3bf10557f832e7865cc48d1.webp",
+      "candidate_assets": [
+        "fd2bde6fea22973ea9f5e7d6.webp",
+        "59ad26424feb969dfdceb09d.webp",
+        "e3b77c3ac3b4d92f71d202f3.webp",
+        "66cf6160a1106dbcf1e0cdf5.webp",
+        "73989f6e83345b98655dc178.webp"
+      ]
+    },
+    {
+      "scene_id": "S058",
+      "tier": "perfect",
+      "reference_asset": "4780e171490a59d75c20a443.webp",
+      "candidate_assets": [
+        "603eae7668dde9c3eeddfc60.webp",
+        "e79675eea223d1cb8bc0983d.webp",
+        "a2d7ecd33e4366fcdd8a9697.webp",
+        "1fb718a1cbb78a8c25e54631.webp",
+        "4216adc75d1c1fa63ba8ac49.webp"
+      ]
+    },
+    {
+      "scene_id": "S059",
+      "tier": "perfect",
+      "reference_asset": "3a133192757dafe058dbf243.webp",
+      "candidate_assets": [
+        "cf589599b25e179f969e310c.webp",
+        "2c459d8f253f40ad90cbceff.webp",
+        "57a201b5f32a2255ca672f5b.webp",
+        "b09d28c09911b063f6c856d4.webp",
+        "831a16b13098b33cea07f14b.webp"
+      ]
+    },
+    {
+      "scene_id": "S060",
+      "tier": "perfect",
+      "reference_asset": "4e1da94c07fd33f6019cd799.webp",
+      "candidate_assets": [
+        "90dc46923a36e74a63dd3f9f.webp",
+        "2ec2ad6b4e2790f31a22b71c.webp",
+        "c3d89a44d66cff1d52602d14.webp",
+        "b7c1f0c1c1e3b75b9bb143e3.webp",
+        "fd3b86e1217706e4ed7cc4d6.webp"
+      ]
+    },
+    {
+      "scene_id": "S061",
+      "tier": "perfect",
+      "reference_asset": "e207d1195b1d6ca29a093ade.webp",
+      "candidate_assets": [
+        "610231d38790afe01e05b1e4.webp",
+        "6c35f8bfacb3683ce3a1b805.webp",
+        "5253eb2aeb28d584cc422e39.webp",
+        "fe50eb9b6eec2ac45228bb21.webp",
+        "6c8b47819959bff12ffee011.webp"
+      ]
+    },
+    {
+      "scene_id": "S062",
+      "tier": "perfect",
+      "reference_asset": "119a86168ede9cfdb19ce8c5.webp",
+      "candidate_assets": [
+        "0678e3849a8e9ac7299f557a.webp",
+        "7fbd292616852e18e713d9ad.webp",
+        "7b697eb401fca393c6b7ab24.webp",
+        "7082e3e492d7a494047f4495.webp",
+        "9fbaac78e1a17f4fb395b3c9.webp"
+      ]
+    },
+    {
+      "scene_id": "S063",
+      "tier": "perfect",
+      "reference_asset": "00bff79209d1917c268cbec1.webp",
+      "candidate_assets": [
+        "15373d2c52f45e38ad3834a6.webp",
+        "ce0efaf586fd539caf2be1cc.webp",
+        "098d7b16dfb96275ec54da0f.webp",
+        "23d79d49243c7ed006c41f83.webp",
+        "719acd914a3f4780d1b943a4.webp"
+      ]
+    },
+    {
+      "scene_id": "S064",
+      "tier": "perfect",
+      "reference_asset": "f88e918be0184b2b392bba00.webp",
+      "candidate_assets": [
+        "fca8ebf89ccec97123f3f184.webp",
+        "36b7c70108ad5d61050533ad.webp",
+        "f2419557c2fc6f9c2546ba99.webp",
+        "590c459e955aaef828791291.webp",
+        "aaf1f39a7e8fb8fe794af04f.webp"
+      ]
+    },
+    {
+      "scene_id": "S065",
+      "tier": "perfect",
+      "reference_asset": "131bc42812492725870b790f.webp",
+      "candidate_assets": [
+        "dc16a5251e200bee78abe741.webp",
+        "4e3af233d54ba817289cfc58.webp",
+        "cc479c96216bb6912410753f.webp",
+        "2561262f1daf11b17afe2a19.webp",
+        "cd382f345734806195aadac4.webp"
+      ]
+    },
+    {
+      "scene_id": "S066",
+      "tier": "perfect",
+      "reference_asset": "2942aa8bcf4b29b1f1635a4f.webp",
+      "candidate_assets": [
+        "64b81c9a56b5b11f242a4919.webp",
+        "55c2d629c86ba9968dec3c02.webp",
+        "92a4414b5ef872d06ab09f35.webp",
+        "fbaf6091e8e4b20132a1badc.webp",
+        "8f8c67084638a2403c885224.webp"
+      ]
+    },
+    {
+      "scene_id": "S067",
+      "tier": "perfect",
+      "reference_asset": "b2e66e1d006ef5d36855418a.webp",
+      "candidate_assets": [
+        "ef7c2d3c1569a3061c4557a8.webp",
+        "f7e2461fe110beca11abb149.webp",
+        "cc508627a6e49c5203ad7adf.webp",
+        "bfb27aea1e905abc57fae4d4.webp",
+        "d603dedddbc40633a5c0d97f.webp"
+      ]
+    },
+    {
+      "scene_id": "S068",
+      "tier": "perfect",
+      "reference_asset": "f4f960fb90525faae6b73d63.webp",
+      "candidate_assets": [
+        "a1f6180cffc17e9f91a737dd.webp",
+        "9ef23ddcdd8a27a4dc9f12f2.webp",
+        "41bbe80647fb876aab5462b6.webp",
+        "bb863f80d4f5783fa3fbb68d.webp",
+        "7d00e08084806bdf4baa446f.webp"
+      ]
+    },
+    {
+      "scene_id": "S069",
+      "tier": "perfect",
+      "reference_asset": "b6115731904b1884f42bc8e7.webp",
+      "candidate_assets": [
+        "970542e30b78701d23ded2f0.webp",
+        "204a259dbcedce70b9e43c4d.webp",
+        "934fe812f80f05a712b1d782.webp",
+        "79ea317bd3e0911df6a61f66.webp",
+        "233b52cc7383237920e71703.webp"
+      ]
+    },
+    {
+      "scene_id": "S070",
+      "tier": "perfect",
+      "reference_asset": "43144f26081657fe77807e0e.webp",
+      "candidate_assets": [
+        "6d553ae8a9072c33c9be9560.webp",
+        "312e77b1246d0fef4abaf45c.webp",
+        "a84814e405ae4b9f11b65ac7.webp",
+        "7713d49d8ca845f192e578ad.webp",
+        "3701d219a13750d6f12dcd1b.webp"
+      ]
+    },
+    {
+      "scene_id": "S071",
+      "tier": "perfect",
+      "reference_asset": "b0b4a8b349fc253589ddf0e8.webp",
+      "candidate_assets": [
+        "e9bab77108c478e28bd98dd6.webp",
+        "81e0ee54e4385cd7490ea87b.webp",
+        "dfdbaa6f1fe93424d264baa6.webp",
+        "905f030df8777e16be3b1316.webp",
+        "bf8e19fd3e791674ff195a78.webp"
+      ]
+    },
+    {
+      "scene_id": "S072",
+      "tier": "perfect",
+      "reference_asset": "a8fc0565322414a64b37ad12.webp",
+      "candidate_assets": [
+        "8ce0e8093d2617b8534af882.webp",
+        "a45ac2d692c18239a0ca9042.webp",
+        "5276100f91eb2c9a379c6d5c.webp",
+        "ee18f767aed7e1fe2fd3ad7b.webp",
+        "cb9b42090f8ff96e1a2d1128.webp"
+      ]
+    },
+    {
+      "scene_id": "S073",
+      "tier": "perfect",
+      "reference_asset": "7a767f3b7f7050099a71ee6e.webp",
+      "candidate_assets": [
+        "cb45f4e8b97ea4426aaf7cc5.webp",
+        "702c0873716a4f0fed617362.webp",
+        "35014dc462d599173fec9579.webp",
+        "305748d3a430434968bc5ee3.webp",
+        "5151f0d7bbe26ebb5cb5fdaf.webp"
+      ]
+    },
+    {
+      "scene_id": "S074",
+      "tier": "perfect",
+      "reference_asset": "423b4809ed75bc0ac9c5cfb3.webp",
+      "candidate_assets": [
+        "69344658ab55f4fcbacafcde.webp",
+        "e1077e913b78fb4c107d2342.webp",
+        "59ac9630eb9e5bf64a395c13.webp",
+        "9c4ad8fc9955e82d8fc6b8e9.webp",
+        "c9425c8b19f689fdb919f788.webp"
+      ]
+    },
+    {
+      "scene_id": "S075",
+      "tier": "perfect",
+      "reference_asset": "c6a998e1f2644d0f138daa58.webp",
+      "candidate_assets": [
+        "f5e89372c21d0221daf4b071.webp",
+        "3b549937cd6a7a2094aea94a.webp",
+        "57a77b6fdbaf20ef45d40c61.webp",
+        "b1b400489c00f880cc01d8ff.webp",
+        "21e4891865314431515229ae.webp"
+      ]
+    },
+    {
+      "scene_id": "S076",
+      "tier": "perfect",
+      "reference_asset": "c354c5fdb83d54b626bdd4f4.webp",
+      "candidate_assets": [
+        "ab6236ea9bb0200813ae85c5.webp",
+        "c9ff2be592f5bf52a7030a4d.webp",
+        "c9e07f381c80b913f25d7ee0.webp",
+        "343b1076bef9f3acaa0dc5df.webp",
+        "b529df63ea36ee582d7af994.webp"
+      ]
+    },
+    {
+      "scene_id": "S077",
+      "tier": "perfect",
+      "reference_asset": "1654422de4802655c582491c.webp",
+      "candidate_assets": [
+        "ff8a7fba27d4d9f76b638e1e.webp",
+        "a0f16c7e6afae74512faebeb.webp",
+        "956b2252e69656caaf4e173a.webp",
+        "3db969ad2f882e591a2ab974.webp",
+        "8640ea3074120be0cf2b445a.webp"
+      ]
+    },
+    {
+      "scene_id": "S078",
+      "tier": "perfect",
+      "reference_asset": "3e923b8b87f0d270c41479c7.webp",
+      "candidate_assets": [
+        "dc1428da97d3e1a179c8a07f.webp",
+        "a66d5715d30f55c051512075.webp",
+        "4c818a093c4d53cbe839f774.webp",
+        "395b20a064d7be0e19afd675.webp",
+        "611223de265c2e1ce0e766e9.webp"
+      ]
+    },
+    {
+      "scene_id": "S079",
+      "tier": "perfect",
+      "reference_asset": "37090d36d51226b3ea88d2ee.webp",
+      "candidate_assets": [
+        "762b5d813b6ca1f894907589.webp",
+        "57c6e1f73e181c5a9839d468.webp",
+        "8e4635a89ff3ca31eb3243e1.webp",
+        "b56d8e1f31ba9414f098ca70.webp",
+        "bd4297fcdbeeba60aa3d22e2.webp"
+      ]
+    },
+    {
+      "scene_id": "S080",
+      "tier": "perfect",
+      "reference_asset": "697f894f134fc4efc2aee2db.webp",
+      "candidate_assets": [
+        "99bc8d317209fb2d0165ff9a.webp",
+        "3713e25e350e132d2499217c.webp",
+        "3359c6935084915c6aa5e4cd.webp",
+        "76f7a274d57d1e1f9336c438.webp",
+        "6d8d338a9063c98a77aeadf6.webp"
+      ]
+    },
+    {
+      "scene_id": "S081",
+      "tier": "perfect",
+      "reference_asset": "c06c66c8ddb996bc1dbbbdcd.webp",
+      "candidate_assets": [
+        "21a3f58594ff771213b62260.webp",
+        "6476d5b8402a40d398b47cd8.webp",
+        "691d4d91ee791d8c85b070eb.webp",
+        "7e5d7d9b6bcfe8f13fe28485.webp",
+        "b9ada520f3454f70614a8728.webp"
+      ]
+    },
+    {
+      "scene_id": "S082",
+      "tier": "perfect",
+      "reference_asset": "e818c11f99642541b643391e.webp",
+      "candidate_assets": [
+        "8b418bc7b8969308c99ee3aa.webp",
+        "d50ae91a516557a1c265db2c.webp",
+        "09f1a7e90d444289269e5c88.webp",
+        "eaff2de3e7230a5e819d230e.webp",
+        "d108d2ce7c35de716270d0d4.webp"
+      ]
+    },
+    {
+      "scene_id": "S083",
+      "tier": "perfect",
+      "reference_asset": "d4887fb3c8370c7934a61e9f.webp",
+      "candidate_assets": [
+        "af63cb69a748f20cdd2658d5.webp",
+        "1aa580b151714f7265b36cf6.webp",
+        "298a81538324c58ff0d4135b.webp",
+        "fc04c35cc205c22e555b830d.webp",
+        "f22faebe26c3e510e900cac5.webp"
+      ]
+    },
+    {
+      "scene_id": "S084",
+      "tier": "perfect",
+      "reference_asset": "02575529d534c4b736fcc9fa.webp",
+      "candidate_assets": [
+        "b330744aea07635d56f12e4d.webp",
+        "204d0f916e401b30056bd028.webp",
+        "00252b517604be085e44d077.webp",
+        "d08ec2f8fa0f3bd4ad6c6055.webp",
+        "53af0bb948d163993258e5b7.webp"
+      ]
+    },
+    {
+      "scene_id": "S085",
+      "tier": "perfect",
+      "reference_asset": "464f3a815950babd76f03913.webp",
+      "candidate_assets": [
+        "9d5a35969e26c1e66aa561f8.webp",
+        "d133540cad94e1fd1b41b811.webp",
+        "3be42b95f172efc3c4a59e13.webp",
+        "d8735576d9f29426636de608.webp",
+        "1a551c4f53e2fceb5109d817.webp"
+      ]
+    },
+    {
+      "scene_id": "S086",
+      "tier": "perfect",
+      "reference_asset": "b0ac471c3b417058564d414d.webp",
+      "candidate_assets": [
+        "47fb7a2b2623d6cf4ec9e198.webp",
+        "8e36d937ff9672783fd733b4.webp",
+        "dd13eeab0e20ddf70a403a7d.webp",
+        "3a31bcc697e2275e157eb68e.webp",
+        "fad920c816dd660a4d5f44af.webp"
+      ]
+    },
+    {
+      "scene_id": "S087",
+      "tier": "perfect",
+      "reference_asset": "bfb31c4ebe5f5e7fae2f822b.webp",
+      "candidate_assets": [
+        "32ef40f3e30c9ed8171bf849.webp",
+        "76420c53d9ae75a6bde99c90.webp",
+        "611032162bff25d4d4ca0005.webp",
+        "c3190e9c953bb5d4e812c258.webp",
+        "7fa00abcf290b707c1757b45.webp"
+      ]
+    },
+    {
+      "scene_id": "S088",
+      "tier": "perfect",
+      "reference_asset": "c61d682a50ea3cfc90d8e4ef.webp",
+      "candidate_assets": [
+        "0f5a087b185d9a9c5fc08431.webp",
+        "8618f9d7b918a5001b2d233c.webp",
+        "90d91f9d37383592c8335400.webp",
+        "f5a2c3b1aef4c0bcd9a11e7a.webp",
+        "38bd227e6c740fbfc111fb55.webp"
+      ]
+    },
+    {
+      "scene_id": "S089",
+      "tier": "perfect",
+      "reference_asset": "c401e56ce2843b27ccd6d4e6.webp",
+      "candidate_assets": [
+        "41c9f0f37f740775bdb87752.webp",
+        "486b7736daa03c859b41f87c.webp",
+        "20f162506d56926661a599b6.webp",
+        "648809cd9ced8ea0dba1eb4d.webp",
+        "3e6a7bb308407ce142773871.webp"
+      ]
+    },
+    {
+      "scene_id": "S090",
+      "tier": "perfect",
+      "reference_asset": "c2448f846955ff2bab24d6b4.webp",
+      "candidate_assets": [
+        "3251ca38cfdb2ca763f74f62.webp",
+        "721f1bfb5404ea4cf90844b4.webp",
+        "16b4425959b49fafdc203a22.webp",
+        "51ee9272abca4bcdcddd4c76.webp",
+        "27f856804538627b0cbd4ed1.webp"
+      ]
+    },
+    {
+      "scene_id": "S091",
+      "tier": "perfect",
+      "reference_asset": "fd4ec7ded54c96ef716f1f76.webp",
+      "candidate_assets": [
+        "cfef9bf218e415dfea2f325e.webp",
+        "534ab04080ba56148f422fe2.webp",
+        "6f66f76562701b9c36f0a692.webp",
+        "41d93625481f1f4122b83122.webp",
+        "dddcdd76587011e2167db97e.webp"
+      ]
+    },
+    {
+      "scene_id": "S092",
+      "tier": "perfect",
+      "reference_asset": "a51c5a58c735514e842ddd39.webp",
+      "candidate_assets": [
+        "f4eb3e082e5afda3d7ad2b55.webp",
+        "493371158b9c935c53746b1a.webp",
+        "8a3a36f9d825232ab919d18b.webp",
+        "b3edc5e2ad1694088cc5cb1e.webp",
+        "990b8d0900f90c7f2e4622c6.webp"
+      ]
+    },
+    {
+      "scene_id": "S093",
+      "tier": "perfect",
+      "reference_asset": "394cdb2df998274692ece7cf.webp",
+      "candidate_assets": [
+        "befeaf683c2ca8b667430f0f.webp",
+        "ca9b0206d98cbd92da1bfbef.webp",
+        "436ca1992eada4055e836fe6.webp",
+        "56543955629aab34157fa329.webp",
+        "c2c654580dbad1318df06531.webp"
+      ]
+    },
+    {
+      "scene_id": "S094",
+      "tier": "perfect",
+      "reference_asset": "ba018a048faf83718214cc63.webp",
+      "candidate_assets": [
+        "069b70cb28171f5d376607d1.webp",
+        "ba735622be6ea3fc6bb3605d.webp",
+        "966e5d79c60facfe58f4051f.webp",
+        "fbe63d10bdfc88193400fad2.webp",
+        "0e24db916c913f511b6b139f.webp"
+      ]
+    },
+    {
+      "scene_id": "S095",
+      "tier": "perfect",
+      "reference_asset": "f32f20e763d832810f2fc5d7.webp",
+      "candidate_assets": [
+        "042238eee4c9e4d9f8dc952c.webp",
+        "d0ef8af392f306d87e507233.webp",
+        "943fbd5d2e8390a41fb6b2ad.webp",
+        "36054e935d09b115a6020163.webp",
+        "011717de809fdb6055748427.webp"
+      ]
+    },
+    {
+      "scene_id": "S096",
+      "tier": "perfect",
+      "reference_asset": "d1d84847ae9bbb7fb5ad0b66.webp",
+      "candidate_assets": [
+        "f3e95e6ba7b9aa7d761c699b.webp",
+        "8f21e86f4d125415481c0066.webp",
+        "0a902025f40e5abea270d040.webp",
+        "6adde25cfd9c0295b763b626.webp",
+        "6193107d2dc0e14076f211d8.webp"
+      ]
+    },
+    {
+      "scene_id": "S097",
+      "tier": "perfect",
+      "reference_asset": "4697fd778e5ae56e67bac838.webp",
+      "candidate_assets": [
+        "b163a38bb429cc1d642cf543.webp",
+        "6037b6da6a8013000950deff.webp",
+        "020238a33466afc7f19548a7.webp",
+        "f54fd4cd235d0a94a048232a.webp",
+        "edc3067c9cf751e803c8d078.webp"
+      ]
+    },
+    {
+      "scene_id": "S098",
+      "tier": "perfect",
+      "reference_asset": "42c6fe3c58f59fee688dee80.webp",
+      "candidate_assets": [
+        "592bf05680b808a8e5646e10.webp",
+        "c9088a39c012aaa9abb5ba61.webp",
+        "974583fb274a52d98a0ac1b5.webp",
+        "636a8d4da7b3094298884df1.webp",
+        "ed587592d1a881624401d5ef.webp"
+      ]
+    },
+    {
+      "scene_id": "S099",
+      "tier": "perfect",
+      "reference_asset": "69832c03f33b1a52540d8f96.webp",
+      "candidate_assets": [
+        "e0ce5656667ffdb71d81561a.webp",
+        "88ff9ddb4dd7f4ef2e437c96.webp",
+        "f908fbf698e84190b89fdff8.webp",
+        "2de7e568ed344406fa1207f6.webp",
+        "995a36f4534c2a423b479843.webp"
+      ]
+    },
+    {
+      "scene_id": "S100",
+      "tier": "perfect",
+      "reference_asset": "96a9dfa9bcc601c3a43f15c5.webp",
+      "candidate_assets": [
+        "ade81ad0a1f9a10060a4d1df.webp",
+        "ff0a9be369368f1f24d38102.webp",
+        "d46023f3df2beb1ce9673a88.webp",
+        "6107b1d9fbc1e31da827b8b7.webp",
+        "5d6167f007b9a0efe20afe99.webp"
+      ]
+    },
+    {
+      "scene_id": "S101",
+      "tier": "perfect",
+      "reference_asset": "401a8e81622eaaf24967d86d.webp",
+      "candidate_assets": [
+        "98a5f656901a05df23417a5b.webp",
+        "6597b594ed710be7cfd7f32a.webp",
+        "1d8e9c5efed61eea0b66378c.webp",
+        "2e23bb89565529ebd9080863.webp",
+        "c3ea06e2c5af34cfdf63a41b.webp"
+      ]
+    },
+    {
+      "scene_id": "S102",
+      "tier": "perfect",
+      "reference_asset": "e5e99d88b4bfd02713cf7060.webp",
+      "candidate_assets": [
+        "8b8303234baae3e09eed8bfc.webp",
+        "3f916dfad26a1d40abda67ed.webp",
+        "eb65867baca1758d0ccddb98.webp",
+        "cd940977deb254d6893cb2b2.webp",
+        "876447de92745d97a7325379.webp"
+      ]
+    },
+    {
+      "scene_id": "S103",
+      "tier": "perfect",
+      "reference_asset": "72b250e39e048263432ecfaa.webp",
+      "candidate_assets": [
+        "c9197c38951e5df7d11a1f48.webp",
+        "2454c061fc076cd153f5a4d4.webp",
+        "6c29a5ac8ac270115cdebe76.webp",
+        "4f57d857129dd03d4b0d978c.webp",
+        "ea99ea40e87efff6f3e5d120.webp"
+      ]
+    },
+    {
+      "scene_id": "S104",
+      "tier": "perfect",
+      "reference_asset": "6fb87ab6cbaf7bce5ae52095.webp",
+      "candidate_assets": [
+        "18a045ee54cdcc971773ea02.webp",
+        "264e4805513fa336db51d31b.webp",
+        "21ad1a990bfa20c1cd8b09f1.webp",
+        "65ec5015cf2dcad2a0ebf36c.webp",
+        "7ad95af701c21c96dbe5350e.webp"
+      ]
+    },
+    {
+      "scene_id": "S105",
+      "tier": "perfect",
+      "reference_asset": "2d0ca36e0fb2bb71cf8f2bb0.webp",
+      "candidate_assets": [
+        "9cac7d0169274fe07ecf0dfd.webp",
+        "45161b30b1dae9a7bc79e776.webp",
+        "a67df0b6e2e86b902e6567c3.webp",
+        "a81d112055528ea516c3e790.webp",
+        "a043f53e3fee0b85668fc4bc.webp"
+      ]
+    },
+    {
+      "scene_id": "S106",
+      "tier": "perfect",
+      "reference_asset": "a766e3201289ca4aeca05f22.webp",
+      "candidate_assets": [
+        "9a4010c2a688f6391da19128.webp",
+        "7d5f55df9a7caeaf56b4e1e7.webp",
+        "aac5d62887b3396bd916568b.webp",
+        "f0baeba6be984037d557eb5a.webp",
+        "8432ab91a26c073a88c98ecd.webp"
+      ]
+    },
+    {
+      "scene_id": "S107",
+      "tier": "excellent",
+      "reference_asset": "5eb01d2685672e991128e130.webp",
+      "candidate_assets": [
+        "aeb0e4e62a67fe4427526d4d.webp",
+        "c3cb189614506dfb9ce0ca2d.webp",
+        "c9c69f7964d936f59f1b321a.webp",
+        "343f70bfc1d47fa7074f0301.webp",
+        "f3cd47e5c109a2f4246cc357.webp"
+      ]
+    },
+    {
+      "scene_id": "S108",
+      "tier": "excellent",
+      "reference_asset": "2b12a6ec7cd608a6d3c6502b.webp",
+      "candidate_assets": [
+        "27fac1cf196a92eceb022118.webp",
+        "e1d9218f63f3bb58e0afd2f8.webp",
+        "a8d4373e6c7d126a0395b723.webp",
+        "4256a815058dc78bf765d2f8.webp",
+        "8f70d99e39a965edd8c58f3d.webp"
+      ]
+    },
+    {
+      "scene_id": "S109",
+      "tier": "excellent",
+      "reference_asset": "29c0dfe3a38f0d9f9991c931.webp",
+      "candidate_assets": [
+        "b2ff5bb749e0d9ce372f2da4.webp",
+        "e418bf2cd780e5192c8468da.webp",
+        "fb120f7151a68ee6320d9606.webp",
+        "7e3ec93fa0ba4c0bceb96888.webp",
+        "69c726cc30e9d96ca043ab5c.webp"
+      ]
+    },
+    {
+      "scene_id": "S110",
+      "tier": "excellent",
+      "reference_asset": "d04a8acbd4f2ea2173e700d8.webp",
+      "candidate_assets": [
+        "c122225cf4f40623fc3f4435.webp",
+        "359b5adbba20fa46bc8bc387.webp",
+        "6eb80e86feb519e2b14f518c.webp",
+        "0addeabd6f1cb14d3189271d.webp",
+        "f46c579e966bf146184fd5bd.webp"
+      ]
+    },
+    {
+      "scene_id": "S111",
+      "tier": "excellent",
+      "reference_asset": "77a0487f42e022f9c6342b37.webp",
+      "candidate_assets": [
+        "8f5a664f3089e7f9b42a07ba.webp",
+        "62b0f995b6955d584db7a38f.webp",
+        "544ef2d3cdb05920065ce09e.webp",
+        "ab5ac3b03d75b82b75eb6881.webp",
+        "6683b82767e8ea566a750f3e.webp"
+      ]
+    },
+    {
+      "scene_id": "S112",
+      "tier": "excellent",
+      "reference_asset": "78e4ad135f38439a7a96a2da.webp",
+      "candidate_assets": [
+        "28d7fa07e53d82443048c318.webp",
+        "a893b642a5e89b1f5098b363.webp",
+        "71dd987569e880dde0a11b12.webp",
+        "f30e830d1f74ca02fbb57b89.webp",
+        "a2dcebf7f1fcb466b133e4c6.webp"
+      ]
+    },
+    {
+      "scene_id": "S113",
+      "tier": "excellent",
+      "reference_asset": "9f53942afe30e063d22fd095.webp",
+      "candidate_assets": [
+        "9baf6836fd97f471f405ff57.webp",
+        "a9e4e01877b7b9cb3657a2a9.webp",
+        "dc1665f28db2b3591ec8d4a9.webp",
+        "0794dc494f83053c47456b3c.webp",
+        "ecdf486c92971c3554988f9f.webp"
+      ]
+    },
+    {
+      "scene_id": "S114",
+      "tier": "excellent",
+      "reference_asset": "739873820ad1b1fbac32dfe1.webp",
+      "candidate_assets": [
+        "0075aa2ebec2edb1fbe1a8e7.webp",
+        "edf856507611d53542433d03.webp",
+        "3c45eb5e5d69fa5aa9b8fc11.webp",
+        "47242f07c1aa466ba08529b9.webp",
+        "d8a9273d4db5b324f265b675.webp"
+      ]
+    },
+    {
+      "scene_id": "S115",
+      "tier": "excellent",
+      "reference_asset": "36725e71b9ba773656c1cc6a.webp",
+      "candidate_assets": [
+        "bb440c8872c6532c8a756705.webp",
+        "04bbfd0173065613d32f3cb8.webp",
+        "84835cd0f8f082da43a89a87.webp",
+        "a564d6372bc5123edd9d7ecd.webp",
+        "4fb5124efd9bd80724652738.webp"
+      ]
+    },
+    {
+      "scene_id": "S116",
+      "tier": "excellent",
+      "reference_asset": "19689106738c25971ea1822b.webp",
+      "candidate_assets": [
+        "a2e88ad98027cebe660c9a6b.webp",
+        "178b996d32d6783fa86a3c82.webp",
+        "d6afa87f4bbd2cca36e89918.webp",
+        "a3909dea9b7eaff25f995ef1.webp",
+        "be9448185d1f86f46e7ee582.webp"
+      ]
+    },
+    {
+      "scene_id": "S117",
+      "tier": "excellent",
+      "reference_asset": "6a7c91fc59c451fee9a0a7fc.webp",
+      "candidate_assets": [
+        "4a8563e626e93994c13cc096.webp",
+        "f8d87340aea7cf04022addb1.webp",
+        "388895ed747c58f2492df082.webp",
+        "6f25acb9aafa12f115adf210.webp",
+        "517e15ee21ac3d81e5308a78.webp"
+      ]
+    },
+    {
+      "scene_id": "S118",
+      "tier": "excellent",
+      "reference_asset": "9633ee6e27301ac4ccd87e39.webp",
+      "candidate_assets": [
+        "a3f79ff30ad5c127e9470b83.webp",
+        "61718ce71886e8ff67de84d4.webp",
+        "03bfa0a5e0a043ba1db90c54.webp",
+        "c361017cd1159b91f9e13216.webp",
+        "b5beef44d7a22ff01b4567ee.webp"
+      ]
+    },
+    {
+      "scene_id": "S119",
+      "tier": "excellent",
+      "reference_asset": "4c5b2278e9216ae2f4af439e.webp",
+      "candidate_assets": [
+        "ee081806a9595855fadc381c.webp",
+        "e9a3a3f6810d3c3f0782b656.webp",
+        "f2155eede530e789fd0ae06b.webp",
+        "667da409a7970759a66a8618.webp",
+        "c1e33019ca43d10f2920e088.webp"
+      ]
+    },
+    {
+      "scene_id": "S120",
+      "tier": "excellent",
+      "reference_asset": "b4550c7b91aae9ba418e942e.webp",
+      "candidate_assets": [
+        "d198a70dba6424a7185aaad8.webp",
+        "2182e53326768ed4d48c6c68.webp",
+        "a21da1002f2c5998bfabc106.webp",
+        "6d6bab8dfcbd7af0279d5e00.webp",
+        "d9dfeda48da8e60ae90e4772.webp"
+      ]
+    },
+    {
+      "scene_id": "S121",
+      "tier": "excellent",
+      "reference_asset": "72245c9cb101bb95ed1d68ac.webp",
+      "candidate_assets": [
+        "c3de0a44200c87fee6cd1218.webp",
+        "c4d7eda0087f618b7ab08e92.webp",
+        "4d9881f223591b21cfe15597.webp",
+        "3797f4c25919da2c29a03bc1.webp",
+        "e50a8970c0bc1679b6f0e8d5.webp"
+      ]
+    },
+    {
+      "scene_id": "S122",
+      "tier": "excellent",
+      "reference_asset": "5d9a561a99d8ec2916bfa9f5.webp",
+      "candidate_assets": [
+        "176c862cb7fd5692f1bf298d.webp",
+        "ecb48778ae1c643ef031703e.webp",
+        "cb83ab400cfadf2193a16163.webp",
+        "5f526fc0c734ee00bf62c6df.webp",
+        "5bb826f51db0d1a789558bb2.webp"
+      ]
+    },
+    {
+      "scene_id": "S123",
+      "tier": "excellent",
+      "reference_asset": "4aeb61a0837b12f2daf2d319.webp",
+      "candidate_assets": [
+        "658d4e668d3f23613da30f4f.webp",
+        "847f90a0588c824ff891f065.webp",
+        "79967342b946ce8589466fd5.webp",
+        "20fc86e8199c805dba586e0b.webp",
+        "0131c02f4c296c886a3f2911.webp"
+      ]
+    },
+    {
+      "scene_id": "S124",
+      "tier": "excellent",
+      "reference_asset": "8439a624d9297179d1641998.webp",
+      "candidate_assets": [
+        "258e41f047887f34d0afe724.webp",
+        "bd3412727723e6c43c2bb42a.webp",
+        "a3713c21e8b7729540a99cd4.webp",
+        "7765f10abde32cfd5900ad44.webp",
+        "be2ba8adce63b15125819ccb.webp"
+      ]
+    },
+    {
+      "scene_id": "S125",
+      "tier": "excellent",
+      "reference_asset": "fa88bf8e021788b674a89810.webp",
+      "candidate_assets": [
+        "94e8648bb21c8d4d7044fcc6.webp",
+        "1ab73755a24f7ed75638aaad.webp",
+        "7b1c714ea1014b80db8019cf.webp",
+        "98afabffad5b26c38bb99a4a.webp",
+        "45485d5d71ad69ef2c504405.webp"
+      ]
+    },
+    {
+      "scene_id": "S126",
+      "tier": "excellent",
+      "reference_asset": "801f8a6db7b15997030fa1ae.webp",
+      "candidate_assets": [
+        "48ded683c353759658433adc.webp",
+        "54c1d3a79f63a05c69a0c232.webp",
+        "61764a81109ecb4087828708.webp",
+        "931f3a8cb2cda4c77879bb51.webp",
+        "121bbaf3bb7d9c3fe05dc43f.webp"
+      ]
+    },
+    {
+      "scene_id": "S127",
+      "tier": "excellent",
+      "reference_asset": "060b49420f95e03894b5df5a.webp",
+      "candidate_assets": [
+        "c605a2b99c2be94c3712b07f.webp",
+        "0f7ebfcb5fb1392c5a144679.webp",
+        "b07808fd8185385694e05239.webp",
+        "5e83700f664d4a549cff8324.webp",
+        "4454705c2e1652cd47fd4f33.webp"
+      ]
+    },
+    {
+      "scene_id": "S128",
+      "tier": "excellent",
+      "reference_asset": "b018bd8ae56da02ec173a993.webp",
+      "candidate_assets": [
+        "29cc74c97b625cddf4239edc.webp",
+        "c1f7f48a26f3e7566ec59b20.webp",
+        "fce934dd85a69a8694281f22.webp",
+        "6a9b913033f09c323896514f.webp",
+        "44579db1d23245026b8cf0f8.webp"
+      ]
+    },
+    {
+      "scene_id": "S129",
+      "tier": "excellent",
+      "reference_asset": "9ab29b9ea505f7eb20fcb0a9.webp",
+      "candidate_assets": [
+        "5fbea68d83a6a0feef28466f.webp",
+        "be848be71dc1f98b1c069968.webp",
+        "29cc73535d863583997eae11.webp",
+        "ee68e99d0c60219415e9f242.webp",
+        "0ac379554d6ab0213311cf1b.webp"
+      ]
+    },
+    {
+      "scene_id": "S130",
+      "tier": "excellent",
+      "reference_asset": "3e9b99dfeff1768e30cc6b6c.webp",
+      "candidate_assets": [
+        "f9fc9fe965df7cccce190f6d.webp",
+        "4413fa77ef747bd6cece25f6.webp",
+        "6b98f55132bb0e61d2e81caf.webp",
+        "5f2ab90285fd7c05d6ca0539.webp",
+        "295b769ca6bfd1c315425bb6.webp"
+      ]
+    },
+    {
+      "scene_id": "S131",
+      "tier": "excellent",
+      "reference_asset": "7da0b08c28d3f37094ba271c.webp",
+      "candidate_assets": [
+        "9a4188d982410331c3f7bcff.webp",
+        "3c2ac866943f254eda4b326d.webp",
+        "165063dc3c8748e6eca81a9c.webp",
+        "4f3ba4b84098abe99019e02d.webp",
+        "6cabfd16876462a7f64e2cbd.webp"
+      ]
+    },
+    {
+      "scene_id": "S132",
+      "tier": "excellent",
+      "reference_asset": "77ca31b5389a3c97f081aea5.webp",
+      "candidate_assets": [
+        "4de75db35cbcea28eeac5eb2.webp",
+        "431e37478af088c5d40b237a.webp",
+        "64ec7128cff1a2a4373876b7.webp",
+        "0859b44deea88aaea85200c2.webp",
+        "68e27fc2d928dda0fe614e7e.webp"
+      ]
+    },
+    {
+      "scene_id": "S133",
+      "tier": "excellent",
+      "reference_asset": "316120c778b5cfcbb671e271.webp",
+      "candidate_assets": [
+        "2bcd50d30e7967d624f2dbed.webp",
+        "8ff18dfbc9b3ed875efbb301.webp",
+        "0ab9ee110112fd2d3c6aa8a2.webp",
+        "3823b514744823bc03f14612.webp",
+        "535286c349051a1e2e6ad4d4.webp"
+      ]
+    },
+    {
+      "scene_id": "S134",
+      "tier": "excellent",
+      "reference_asset": "dd7cf6834a6be34ace04fd26.webp",
+      "candidate_assets": [
+        "a16a89926a375342d8d1621a.webp",
+        "34b20e45587fa540368ab297.webp",
+        "1029dca3b9b9c86e9d7c45a2.webp",
+        "0319fbb154abde73576c0422.webp",
+        "c90fc726483dbcfdd96929e4.webp"
+      ]
+    },
+    {
+      "scene_id": "S135",
+      "tier": "excellent",
+      "reference_asset": "c0da8252b7c98e901a30dbbc.webp",
+      "candidate_assets": [
+        "9d1b91f6d5c99a5cfaa3f808.webp",
+        "8606d3ecd468dbc020988ffa.webp",
+        "997c8b3fd346bc61fd62aa46.webp",
+        "f2f7cb911cac5da29b52902b.webp",
+        "6c58a0e36c5c9a3e446aa500.webp"
+      ]
+    },
+    {
+      "scene_id": "S136",
+      "tier": "excellent",
+      "reference_asset": "0410f65b25508934d0aeb307.webp",
+      "candidate_assets": [
+        "c697393a64041c1b03aedd24.webp",
+        "ec182165fb3e561282182584.webp",
+        "b47d1a4728d53de375a58c7e.webp",
+        "b27d1041447c079a94908507.webp",
+        "3973f45b93dbb9a2e3b73b2e.webp"
+      ]
+    },
+    {
+      "scene_id": "S137",
+      "tier": "excellent",
+      "reference_asset": "e16f481b7f6fde86235551a9.webp",
+      "candidate_assets": [
+        "2a638d99d9b618b327c06e65.webp",
+        "8db68dd20fe943f8173b388f.webp",
+        "ba3b554ee363f698d5d557d8.webp",
+        "1da97f1a11099aa55d28ea81.webp",
+        "25c85c049b4675e870be9d9d.webp"
+      ]
+    },
+    {
+      "scene_id": "S138",
+      "tier": "excellent",
+      "reference_asset": "24b2fb8b86dfd81b7aadf76d.webp",
+      "candidate_assets": [
+        "72c5711d63fd18224d135138.webp",
+        "64e6da052cdf78e7b8689f87.webp",
+        "5cf828b2dbedde2431fcd57e.webp",
+        "b34e7d8aad89e5c2ad21f293.webp",
+        "8d36e6913242315aeba123f6.webp"
+      ]
+    },
+    {
+      "scene_id": "S139",
+      "tier": "excellent",
+      "reference_asset": "e913a1f2ec53a2d08eb36669.webp",
+      "candidate_assets": [
+        "4247e855a1a6fd7609e86847.webp",
+        "eec0d195b36c5c492befa234.webp",
+        "41754d2efe69a7719f9abd50.webp",
+        "f61c6e848623b11e8676a40e.webp",
+        "ddd6f4865a979d45c6d79d18.webp"
+      ]
+    },
+    {
+      "scene_id": "S140",
+      "tier": "excellent",
+      "reference_asset": "8c31c85c01cb42a468589349.webp",
+      "candidate_assets": [
+        "4917126fce96e2d0c81189db.webp",
+        "f29363641f483f514c22da83.webp",
+        "3a868a35e7e43c5239332e83.webp",
+        "9f78071c6f6d4570a90c5838.webp",
+        "77831a8426588789fd2fa9ee.webp"
+      ]
+    },
+    {
+      "scene_id": "S141",
+      "tier": "excellent",
+      "reference_asset": "7f4ff4d8ba77d0fdb2d0ebcb.webp",
+      "candidate_assets": [
+        "7a827388780a37a8130c6d65.webp",
+        "ac1ecded647616727bb31f07.webp",
+        "b0874a76992d973b3be38ba2.webp",
+        "e52f700a36b6cf700ee01de7.webp",
+        "22c02c2e501dcaabfa8493f3.webp"
+      ]
+    },
+    {
+      "scene_id": "S142",
+      "tier": "excellent",
+      "reference_asset": "4eb5ca20d65666b78c136a6b.webp",
+      "candidate_assets": [
+        "00ebb3e5c0b76ebc3dd6d315.webp",
+        "3cffcf8979a5e1f69f57f3ec.webp",
+        "f0e1a9c2667a07f091d98050.webp",
+        "3c600c1b49338d5b0dfff32d.webp",
+        "162b4d5e813b074d183f9462.webp"
+      ]
+    },
+    {
+      "scene_id": "S143",
+      "tier": "excellent",
+      "reference_asset": "f1d9733b9b563ae67260f4cd.webp",
+      "candidate_assets": [
+        "81a37cb1fb46b7185c50fdde.webp",
+        "c2346f3e70b2cb464aa2c6c6.webp",
+        "0e0e604b34c08151ce09fd3c.webp",
+        "db681a998cfc6c668451e1a0.webp",
+        "cf81677778c8de34015ac7a2.webp"
+      ]
+    },
+    {
+      "scene_id": "S144",
+      "tier": "excellent",
+      "reference_asset": "46bf8b803978094feccfa60d.webp",
+      "candidate_assets": [
+        "288be707eb4a29f7a6b40f5d.webp",
+        "c0d27602f9d2a34d2dd57a59.webp",
+        "f61f08e90d65b8718a0ca25d.webp",
+        "a9a9728572fc9bfe16434fb6.webp",
+        "ffdc633d7442b696f44284ed.webp"
+      ]
+    },
+    {
+      "scene_id": "S145",
+      "tier": "excellent",
+      "reference_asset": "02ee95792d536b097272c402.webp",
+      "candidate_assets": [
+        "fb284964221e4da4f4c0f827.webp",
+        "534aa0cb4d0bf596623030dc.webp",
+        "b2a4a667720a0394ca2f772d.webp",
+        "e606eb374bf1460480b514b5.webp",
+        "7b5c6cca622970eaa7a0eede.webp"
+      ]
+    },
+    {
+      "scene_id": "S146",
+      "tier": "excellent",
+      "reference_asset": "90419524ccc3405d99dfca32.webp",
+      "candidate_assets": [
+        "a1b2dc3eca112c0c2999e5f2.webp",
+        "b5148e9573d8551fa19b2f23.webp",
+        "e84b7054451d001e12027d9e.webp",
+        "9041fe8036e639983a150333.webp",
+        "518eda5b21ae585b7464507f.webp"
+      ]
+    },
+    {
+      "scene_id": "S147",
+      "tier": "excellent",
+      "reference_asset": "b9c076a05e418ada240d9395.webp",
+      "candidate_assets": [
+        "a45c7d152377577ca67be983.webp",
+        "9662e03a00cf7e22396cca40.webp",
+        "38cfa45f857383f8ff556322.webp",
+        "105d977582e73a1e8d0a33af.webp",
+        "68c11bc2b5f2229727bacda7.webp"
+      ]
+    },
+    {
+      "scene_id": "S148",
+      "tier": "excellent",
+      "reference_asset": "fa74b4a1fc3a5d773dbfeda2.webp",
+      "candidate_assets": [
+        "04d0968fd84912b3d9a773f4.webp",
+        "9d544cf049bbae760ee0554e.webp",
+        "fec04b1ba2a4292d23de5623.webp",
+        "1e7a2ab7b13693b91cd04eb4.webp",
+        "05f67ca25846cf89a835e813.webp"
+      ]
+    },
+    {
+      "scene_id": "S149",
+      "tier": "excellent",
+      "reference_asset": "cd58ffb8f069b7400e450009.webp",
+      "candidate_assets": [
+        "81f7c0fc6984c97166fc1690.webp",
+        "366a9f440a5c1ee80a59ce42.webp",
+        "85677b943b8c25e3d8e677b7.webp",
+        "63bbece79c589562a53575a7.webp",
+        "a6b0775c5ce0142322aec656.webp"
+      ]
+    },
+    {
+      "scene_id": "S150",
+      "tier": "excellent",
+      "reference_asset": "2f23b210e0870c4a5678768d.webp",
+      "candidate_assets": [
+        "844829a4fc93ff39761c1526.webp",
+        "f4f9270c722acbc43ab179fb.webp",
+        "bb4e671e8d43e8d55e6a824e.webp",
+        "9dd8c3050e09aec63d9a238d.webp",
+        "da79084e25eec412b6b20c16.webp"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "prepare-data": "node tools/prepare-study.mjs",
+    "seed": "node tools/seed-supabase.mjs",
+    "check": "node tools/check-study.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.3"
+  }
+}
