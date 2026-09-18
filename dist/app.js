@@ -377,11 +377,16 @@ async function showResults(assignmentId) {
     const methodByCandidate = new Map(variants.map((item) => [item.id, item.scene_variants?.method_name || "未知方法"]));
     target.innerHTML = attempts.length ? attempts.map((attempt) => {
       const grouped = attempt.responses.reduce((map, response) => {
-        (map[response.scene_id] ??= []).push(response);
+        const method = methodByCandidate.get(response.candidate_id) || "未知方法";
+        (map[response.scene_id] ??= {})[method] = response.rank;
         return map;
       }, {});
-      return `<article class="result-block"><h3>作答 #${attempt.attempt_no}</h3><p class="muted">${escapeHtml(attempt.started_at)}${attempt.submitted_at ? ` · 提交于 ${escapeHtml(attempt.submitted_at)}` : " · 未完成"}</p>
-        ${Object.entries(grouped).map(([sceneId, responses]) => `<div><strong>${escapeHtml(sceneId)}</strong><ol>${responses.sort((a, b) => a.rank - b.rank).map((response) => `<li>${escapeHtml(methodByCandidate.get(response.candidate_id))}：第 ${response.rank} 名</li>`).join("")}</ol></div>`).join("")}
+      const scenes = Object.entries(grouped).sort(([left], [right]) => left.localeCompare(right, undefined, { numeric: true }));
+      const methods = [...new Set(variants.map((item) => item.scene_variants?.method_name).filter(Boolean))].sort();
+      const resultStatus = attempt.submitted_at ? `已提交 · 提交于 ${escapeHtml(attempt.submitted_at)}` : "未完成历史记录";
+      const table = scenes.length ? `<div class="result-table-wrap"><table class="result-table"><thead><tr><th>场景</th>${methods.map((method) => `<th>${escapeHtml(method)}</th>`).join("")}</tr></thead><tbody>${scenes.map(([sceneId, ranks]) => `<tr><th scope="row">${escapeHtml(sceneId)}</th>${methods.map((method) => `<td>${ranks[method] ?? "—"}</td>`).join("")}</tr>`).join("")}</tbody></table></div>` : `<p class="muted">尚无已保存的场景评分。</p>`;
+      return `<article class="result-block"><h3>作答 #${attempt.attempt_no}</h3><p class="muted">开始于 ${escapeHtml(attempt.started_at)} · ${resultStatus} · 已评分 ${scenes.length} / 10 个场景</p>
+        ${table}
         <div class="button-row"><button class="button danger" data-delete-attempt="${attempt.id}">删除此作答</button></div></article>`;
     }).join("") : `<p class="muted">尚无作答记录。</p>`;
     target.querySelectorAll("[data-delete-attempt]").forEach((button) => button.addEventListener("click", () => deleteAttempt(button.dataset.deleteAttempt)));

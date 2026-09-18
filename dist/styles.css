@@ -95,7 +95,11 @@ tr.selectable:hover, tr.selected { background: #fff5e8; }
 .tag.completed { color: #304c7c; background: #e5edff; }
 .empty { color: var(--muted); text-align: center; }
 .result-block { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--line); }
-.result-block ol { margin: .5rem 0 0; padding-left: 1.35rem; color: var(--muted); line-height: 1.65; }
+.result-table-wrap { margin-top: .8rem; overflow: auto; border: 1px solid var(--line); border-radius: 10px; }
+.result-table th, .result-table td { min-width: 78px; padding: .55rem .65rem; text-align: center; }
+.result-table th:first-child, .result-table td:first-child { min-width: 72px; text-align: left; }
+.result-table th { position: static; font-size: .72rem; }
+.result-table td { color: var(--accent-dark); font-weight: 750; }
 .muted { color: var(--muted); }
 
 @media (max-width: 720px) {
