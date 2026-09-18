@@ -397,6 +397,54 @@ begin
 end;
 $$;
 
+create or replace function public.admin_reset_assignment(p_assignment_id uuid)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  current_status text;
+begin
+  if not public.is_study_admin() then raise exception 'Administrator access required.'; end if;
+  select status into current_status from public.assignments where id = p_assignment_id for update;
+  if current_status is null then raise exception 'Assignment not found.'; end if;
+  if current_status not in ('claimed', 'completed') then raise exception 'Only claimed or completed assignments can be reset.'; end if;
+
+  -- Keep attempts and responses; only release the assignment for a new browser.
+  update public.assignments
+  set status = 'available', claimed_by = null, claimed_at = null, completed_at = null
+  where id = p_assignment_id;
+end;
+$$;
+
+create or replace function public.admin_scene_stats()
+returns table(scene_id text, rating_count bigint, averages jsonb)
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  if not public.is_study_admin() then raise exception 'Administrator access required.'; end if;
+  return query
+  with per_method as (
+    select asv.scene_id, sv.method_name,
+      count(*)::bigint as method_count,
+      round(avg(r.rank::numeric), 2) as average_rank
+    from public.responses r
+    join public.assignment_scene_variants asv on asv.id = r.candidate_id
+    join public.scene_variants sv on sv.id = asv.variant_id
+    group by asv.scene_id, sv.method_name
+  )
+  select pm.scene_id,
+    sum(pm.method_count)::bigint as rating_count,
+    jsonb_object_agg(pm.method_name, pm.average_rank order by pm.method_name) as averages
+  from per_method pm
+  group by pm.scene_id
+  order by pm.scene_id;
+end;
+$$;
+
 create or replace function public.admin_create_assignment(p_scene_ids jsonb, p_note text default null)
 returns uuid
 language plpgsql
@@ -472,7 +520,7 @@ revoke all on function public.assignment_payload(uuid, uuid) from public;
 revoke all on function public.authorize_admin(text), public.admin_sign_out() from public;
 grant execute on function public.is_study_admin() to authenticated;
 grant execute on function public.get_active_assignment(), public.claim_assignment(), public.save_scene_response(uuid, text, jsonb), public.complete_attempt(uuid) to authenticated;
-grant execute on function public.authorize_admin(text), public.admin_sign_out(), public.admin_session(), public.admin_update_assignment(uuid, text, integer, text), public.admin_create_assignment(jsonb, text), public.admin_delete_attempt(uuid), public.admin_delete_assignment(uuid) to authenticated;
+grant execute on function public.authorize_admin(text), public.admin_sign_out(), public.admin_session(), public.admin_update_assignment(uuid, text, integer, text), public.admin_reset_assignment(uuid), public.admin_scene_stats(), public.admin_create_assignment(jsonb, text), public.admin_delete_attempt(uuid), public.admin_delete_assignment(uuid) to authenticated;
 grant select on public.assignments, public.attempts, public.responses, public.assignment_scene_variants, public.scene_variants to authenticated;
 
 -- Needed only by the local bootstrap script, which authenticates with the secret key.

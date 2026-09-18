@@ -5,7 +5,7 @@ const adminOnly = Boolean(window.EVAL_ADMIN_ROUTE);
 let supabase;
 let evaluation;
 let currentScene = 0;
-let adminState = { rows: [], selectedId: null, filter: "" };
+let adminState = { rows: [], selectedId: null, filter: "", stats: [] };
 
 const escapeHtml = (value = "") => String(value)
   .replaceAll("&", "&amp;")
@@ -108,6 +108,23 @@ function rankText(rank) {
   return rank ? `当前：第 ${rank} 名` : "当前：未排名";
 }
 
+function syncRankControls(scene) {
+  for (const input of document.querySelectorAll(".rank-slider")) {
+    const candidate = scene.candidates.find((item) => item.id === input.dataset.candidateId);
+    if (!candidate) continue;
+    const text = rankText(candidate.rank);
+    input.value = String(candidate.rank || 0);
+    input.setAttribute("aria-valuetext", text);
+    const value = input.closest(".candidate")?.querySelector(".rank-value");
+    if (value) value.textContent = text;
+  }
+  const complete = validRanks(scene);
+  const nextButton = document.querySelector("#next-scene");
+  if (nextButton) nextButton.disabled = !complete;
+  const summary = document.querySelector("#evaluation-status");
+  if (summary) summary.textContent = complete ? "排名完整，可以继续。" : "请为五个结果分别选择 1–5 名。";
+}
+
 function renderEvaluation() {
   const scene = evaluation.scenes[currentScene];
   const completed = evaluation.scenes.filter(validRanks).length;
@@ -123,7 +140,7 @@ function renderEvaluation() {
         <div class="rank-control">
           <div class="rank-head"><strong>匿名结果 ${index + 1}</strong><span class="rank-value">${rankText(candidate.rank)}</span></div>
           <input class="rank-slider" data-candidate-id="${candidate.id}" type="range" min="0" max="5" step="1" value="${candidate.rank || 0}" aria-label="匿名结果 ${index + 1} 的排名" aria-valuetext="${rankText(candidate.rank)}" />
-          <div class="rank-scale"><span>未评</span><span>1 最好</span><span>5 最差</span></div>
+          <div class="rank-scale" aria-hidden="true"><span>未评</span><span>1<small>最好</small></span><span>2</span><span>3</span><span>4</span><span>5<small>最差</small></span></div>
         </div>
       </article>`).join("")}
     </section>
@@ -132,11 +149,11 @@ function renderEvaluation() {
       <span class="hint">选择已被其他结果使用的名次时，两个名次会自动交换。</span>
       <button class="button" id="next-scene" ${canContinue ? "" : "disabled"}>${currentScene === evaluation.scenes.length - 1 ? "提交测评" : "保存并继续"}</button>
     </section>
-    ${status(canContinue ? "排名完整，可以继续。" : "请为五个结果分别选择 1–5 名。")}`;
+    <p id="evaluation-status" class="status">${canContinue ? "排名完整，可以继续。" : "请为五个结果分别选择 1–5 名。"}</p>`;
 
   document.querySelectorAll(".rank-slider").forEach((input) => input.addEventListener("input", (event) => {
     updateRank(scene, event.currentTarget.dataset.candidateId, Number(event.currentTarget.value));
-    renderEvaluation();
+    syncRankControls(scene);
   }));
   document.querySelector("#previous-scene").addEventListener("click", () => {
     currentScene -= 1;
@@ -248,6 +265,22 @@ function attemptsCount(row) {
   return row.attempts?.[0]?.count ?? 0;
 }
 
+async function loadSceneStats() {
+  return (await rpc("admin_scene_stats")) || [];
+}
+
+function drawSceneStats() {
+  const target = document.querySelector("#scene-stats-table");
+  if (!target) return;
+  const methods = [...new Set(adminState.stats.flatMap((row) => Object.keys(row.averages || {})))].sort();
+  if (!adminState.stats.length) {
+    target.innerHTML = `<p class="muted">尚无评分记录。</p>`;
+    return;
+  }
+  const average = (value) => Number.isFinite(Number(value)) ? Number(value).toFixed(2) : "—";
+  target.innerHTML = `<table class="stats-table"><thead><tr><th>场景</th><th>评分数</th>${methods.map((method) => `<th>${escapeHtml(method)} 平均排名</th>`).join("")}</tr></thead><tbody>${adminState.stats.map((row) => `<tr><td>${escapeHtml(row.scene_id)}</td><td>${row.rating_count}</td>${methods.map((method) => `<td>${average(row.averages?.[method])}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+}
+
 function drawAdminRows() {
   const target = document.querySelector("#assignment-rows");
   if (!target) return;
@@ -272,17 +305,31 @@ function renderAdminDetails() {
     target.innerHTML = `<p class="muted">选择左侧的任务后，可查看答卷、修改元数据或删除任务。</p>`;
     return;
   }
+  const resetButton = ["claimed", "completed"].includes(selected.status)
+    ? `<button type="button" class="button secondary" id="reset-assignment">清空状态并重新开放</button>`
+    : "";
   target.innerHTML = `<h3>${escapeHtml(selected.code)}</h3><p class="muted">状态：${escapeHtml(selected.status)} · 已有 ${attemptsCount(selected)} 次作答</p>
     <form id="assignment-edit" class="form-grid">
       <label>备注<textarea name="note">${escapeHtml(selected.note || "")}</textarea></label>
       <label>发放顺序<input name="issue_order" type="number" min="1" value="${selected.issue_order || ""}" /></label>
       <label>状态<select name="status"><option value="${escapeHtml(selected.status)}">保持 ${escapeHtml(selected.status)}</option><option value="available">重新开放（下一位可领取）</option></select></label>
-      <div class="button-row"><button class="button">保存修改</button><button type="button" class="button secondary" id="show-results">查看答卷</button><button type="button" class="button danger" id="delete-assignment">删除任务</button></div>
-      ${status("重新开放不会删除历史答卷；下一位会形成新的作答记录。")}
+      <div class="button-row"><button class="button">保存修改</button><button type="button" class="button secondary" id="show-results">查看答卷</button>${resetButton}<button type="button" class="button danger" id="delete-assignment">删除任务</button></div>
+      ${status("清空状态只会把任务变为可领取；历史作答和评分会保留。")}
     </form><div id="assignment-results"></div>`;
   document.querySelector("#assignment-edit").addEventListener("submit", saveAssignmentEdit);
   document.querySelector("#show-results").addEventListener("click", () => showResults(selected.id));
+  document.querySelector("#reset-assignment")?.addEventListener("click", () => resetAssignment(selected));
   document.querySelector("#delete-assignment").addEventListener("click", () => deleteAssignment(selected));
+}
+
+async function resetAssignment(selected) {
+  if (!window.confirm(`将 ${selected.code} 重新开放，但保留已有作答和评分。确定继续吗？`)) return;
+  try {
+    await rpc("admin_reset_assignment", { p_assignment_id: selected.id });
+    await renderAdminHome(selected.id);
+  } catch (error) {
+    document.querySelector("#assignment-detail").insertAdjacentHTML("beforeend", status(friendlyError(error), "error"));
+  }
 }
 
 async function saveAssignmentEdit(event) {
@@ -375,12 +422,13 @@ function setupAdminCreation() {
 }
 
 async function renderAdminHome(selectedId = adminState.selectedId) {
-  root.innerHTML = `<section class="admin-top"><div><p class="eyebrow">Study administration</p><h1>测评管理</h1><p class="lead">管理预生成的 750 个任务、每次作答和补充任务。所有显示的方法名称只对管理员可见。</p></div><button class="button secondary" id="admin-sign-out">退出登录</button></section><section class="admin-grid"><article class="card"><div class="list-tools"><input id="assignment-search" placeholder="按编号、轮次、状态或备注查找" aria-label="查找任务" /></div><div class="table-wrap"><table><thead><tr><th>任务</th><th>轮次</th><th>组</th><th>顺序</th><th>状态</th><th>作答</th></tr></thead><tbody id="assignment-rows"></tbody></table></div></article><aside class="card" id="assignment-detail"></aside><aside class="card"><h3>新增补充任务</h3><p class="muted">仅适合研究者补测。预设的 750 个任务不需要手动创建。</p><form id="custom-assignment" class="form-grid"><label>10 个场景编号<textarea name="scenes" required placeholder="001, 002, 003, …, 010"></textarea></label><label>备注<textarea name="note" placeholder="可选"></textarea></label><button class="button">创建任务</button></form></aside></section>`;
+  root.innerHTML = `<section class="admin-top"><div><p class="eyebrow">Study administration</p><h1>测评管理</h1><p class="lead">管理预生成的 750 个任务、每次作答和补充任务。所有显示的方法名称只对管理员可见。</p></div><button class="button secondary" id="admin-sign-out">退出登录</button></section><section class="admin-grid"><article class="card"><div class="list-tools"><input id="assignment-search" placeholder="按编号、轮次、状态或备注查找" aria-label="查找任务" /></div><div class="table-wrap"><table><thead><tr><th>任务</th><th>轮次</th><th>组</th><th>顺序</th><th>状态</th><th>作答</th></tr></thead><tbody id="assignment-rows"></tbody></table></div></article><aside class="card" id="assignment-detail"></aside><aside class="card"><h3>新增补充任务</h3><p class="muted">仅适合研究者补测。预设的 750 个任务不需要手动创建。</p><form id="custom-assignment" class="form-grid"><label>10 个场景编号<textarea name="scenes" required placeholder="001, 002, 003, …, 010"></textarea></label><label>备注<textarea name="note" placeholder="可选"></textarea></label><button class="button">创建任务</button></form></aside><section class="card stats-card"><h2>全局打分统计</h2><p class="muted">按场景和方法统计所有已记录评分；1 最好，5 最差。五种方法合计的平均值恒为 3，因此这里分别列出每种方法。</p><div class="table-wrap" id="scene-stats-table">正在加载…</div></section></section>`;
   try {
-    adminState.rows = await loadAssignments();
+    [adminState.rows, adminState.stats] = await Promise.all([loadAssignments(), loadSceneStats()]);
     adminState.selectedId = selectedId;
     drawAdminRows();
     renderAdminDetails();
+    drawSceneStats();
     document.querySelector("#assignment-search").addEventListener("input", (event) => {
       adminState.filter = event.currentTarget.value;
       drawAdminRows();
