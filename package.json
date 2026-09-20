@@ -3,6 +3,7 @@
   "scripts": {
     "prepare-data": "node tools/prepare-study.mjs",
     "seed": "node tools/seed-supabase.mjs",
+    "generate-import-sql": "node tools/generate-import-sql.mjs",
     "check": "node tools/check-study.mjs"
   },
   "devDependencies": {

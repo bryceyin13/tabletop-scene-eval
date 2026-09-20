@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { access, mkdir, readFile, stat, writeFile } from "node:fs/promises";
+import { mkdir, readFile, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
@@ -8,7 +8,7 @@ const source = process.argv[2] || "C:\\Personal\\CG\\Repos\\TabletopArti\\local\
 const assetsDir = path.join(repo, "dist", "assets");
 const seedDir = path.join(repo, "supabase", "seed");
 const methods = ["acdc", "gen3dsr", "midi", "tabletoparti", "tabletopgen"];
-const assetSalt = "tabletop-scene-eval-v1";
+const assetSalt = "tabletop-scene-eval-v2";
 const random = seededRandom("tabletop-scene-eval-plan-v1");
 
 function seededRandom(seed) {
@@ -35,12 +35,7 @@ function opaqueAsset(sceneId, kind) {
   return `${createHash("sha256").update(`${assetSalt}:${sceneId}:${kind}`).digest("hex").slice(0, 24)}.webp`;
 }
 
-async function exists(file) {
-  try { await access(file); return true; } catch { return false; }
-}
-
 async function convertImage(input, output) {
-  if (await exists(output)) return;
   await sharp(input).resize(1280, 720).webp({ quality: 90, effort: 4 }).toFile(output);
 }
 

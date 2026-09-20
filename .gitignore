@@ -1,3 +1,4 @@
 node_modules/
 supabase/seed/private-variants.json
+supabase/seed/import.sql
 dist/config.local.js
