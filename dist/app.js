@@ -269,6 +269,38 @@ async function loadSceneStats() {
   return (await rpc("admin_scene_stats")) || [];
 }
 
+async function loadAllRatings() {
+  const client = await db();
+  const pageSize = 500;
+  const ratings = [];
+  for (let start = 0; ; start += pageSize) {
+    const { data, error } = await client.from("responses").select("scene_id,rank,evaluated_at,attempt:attempts!inner(attempt_no,started_at,submitted_at,assignment:assignments!inner(code,round_no,group_no)),candidate:assignment_scene_variants!inner(display_position,method:scene_variants!inner(method_name))").order("id", { ascending: true }).range(start, start + pageSize - 1);
+    if (error) throw error;
+    ratings.push(...data.map((row) => {
+      const attempt = row.attempt || {};
+      const assignment = attempt.assignment || {};
+      const candidate = row.candidate || {};
+      return {
+        assignment_code: assignment.code || "",
+        round_no: assignment.round_no ?? null,
+        group_no: assignment.group_no ?? null,
+        attempt_no: attempt.attempt_no,
+        attempt_started_at: attempt.started_at,
+        attempt_submitted_at: attempt.submitted_at,
+        attempt_status: attempt.submitted_at ? "completed" : "unfinished_history",
+        scene_id: row.scene_id,
+        method_name: candidate.method?.method_name || "Unknown",
+        candidate_display_position: candidate.display_position,
+        rank: row.rank,
+        evaluated_at: row.evaluated_at
+      };
+    }));
+    if (data.length < pageSize) break;
+  }
+  ratings.sort((a, b) => a.assignment_code.localeCompare(b.assignment_code, undefined, { numeric: true }) || a.attempt_no - b.attempt_no || a.scene_id.localeCompare(b.scene_id, undefined, { numeric: true }) || a.method_name.localeCompare(b.method_name));
+  return ratings;
+}
+
 function drawSceneStats() {
   const target = document.querySelector("#scene-stats-table");
   if (!target) return;
@@ -405,6 +437,42 @@ async function deleteAttempt(attemptId) {
   }
 }
 
+async function exportRatings(format) {
+  const buttons = [...document.querySelectorAll("#export-csv, #export-json")];
+  const message = document.querySelector("#export-status");
+  buttons.forEach((button) => { button.disabled = true; });
+  message.textContent = "正在读取全部已保存评分…";
+  message.className = "muted";
+  try {
+    const ratings = await loadAllRatings();
+    const fields = ["assignment_code", "round_no", "group_no", "attempt_no", "attempt_started_at", "attempt_submitted_at", "attempt_status", "scene_id", "method_name", "candidate_display_position", "rank", "evaluated_at"];
+    const csvCell = (value) => {
+      const text = String(value ?? "");
+      const safe = /^[=+\-@\t\r]/.test(text) ? "'" + text : text;
+      return "\"" + safe.replaceAll("\"", "\"\"") + "\"";
+    };
+    const content = format === "json"
+      ? JSON.stringify({ exported_at: new Date().toISOString(), rating_count: ratings.length, ratings }, null, 2)
+      : "\uFEFF" + [fields.join(","), ...ratings.map((rating) => fields.map((field) => csvCell(rating[field])).join(","))].join("\r\n");
+    const extension = format === "csv" ? "csv" : "json";
+    const mime = format === "csv" ? "text/csv;charset=utf-8" : "application/json;charset=utf-8";
+    const url = URL.createObjectURL(new Blob([content], { type: mime }));
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "tabletop-ratings-" + new Date().toISOString().slice(0, 10) + "." + extension;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    message.textContent = "已导出 " + ratings.length + " 条评分记录。";
+  } catch (error) {
+    message.className = "status error";
+    message.textContent = friendlyError(error);
+  } finally {
+    buttons.forEach((button) => { button.disabled = false; });
+  }
+}
+
 function setupAdminCreation() {
   document.querySelector("#custom-assignment").addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -434,6 +502,9 @@ async function renderAdminHome(selectedId = adminState.selectedId) {
     drawAdminRows();
     renderAdminDetails();
     drawSceneStats();
+    root.querySelector(".admin-top").insertAdjacentHTML("afterend", `<div class="admin-export-toolbar"><div><strong>用户实际评分</strong><p id="export-status" class="muted" role="status">导出所有已保存评分，包括未完成作答中的评分。</p></div><div class="button-row"><button type="button" class="button secondary" id="export-csv">导出 CSV</button><button type="button" class="button secondary" id="export-json">导出 JSON</button></div></div>`);
+    document.querySelector("#export-csv").addEventListener("click", () => exportRatings("csv"));
+    document.querySelector("#export-json").addEventListener("click", () => exportRatings("json"));
     document.querySelector("#assignment-search").addEventListener("input", (event) => {
       adminState.filter = event.currentTarget.value;
       drawAdminRows();
