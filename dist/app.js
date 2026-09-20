@@ -108,7 +108,7 @@ function rankText(rank) {
   return rank ? `当前：第 ${rank} 名` : "当前：未排名";
 }
 
-function syncRankControls(scene) {
+function syncRankControls(scene, error = "") {
   for (const input of document.querySelectorAll(".rank-slider")) {
     const candidate = scene.candidates.find((item) => item.id === input.dataset.candidateId);
     if (!candidate) continue;
@@ -122,7 +122,10 @@ function syncRankControls(scene) {
   const nextButton = document.querySelector("#next-scene");
   if (nextButton) nextButton.disabled = !complete;
   const summary = document.querySelector("#evaluation-status");
-  if (summary) summary.textContent = complete ? "排名完整，可以继续。" : "请为五个结果分别选择 1–5 名。";
+  if (summary) {
+    summary.textContent = error || (complete ? "排名完整，可以继续。" : "请为五个结果分别选择 1–5 名。");
+    summary.classList.toggle("error", Boolean(error));
+  }
 }
 
 function renderEvaluation() {
@@ -146,14 +149,14 @@ function renderEvaluation() {
     </section>
     <section class="evaluation-actions">
       <button class="button secondary" id="previous-scene" ${currentScene === 0 ? "disabled" : ""}>上一场景</button>
-      <span class="hint">选择已被其他结果使用的名次时，两个名次会自动交换。</span>
+      <span class="hint">如需调整，请先把原结果移到“未评”，再选择空出的名次。</span>
       <button class="button" id="next-scene" ${canContinue ? "" : "disabled"}>${currentScene === evaluation.scenes.length - 1 ? "提交测评" : "保存并继续"}</button>
     </section>
-    <p id="evaluation-status" class="status">${canContinue ? "排名完整，可以继续。" : "请为五个结果分别选择 1–5 名。"}</p>`;
+    <p id="evaluation-status" class="status" role="status" aria-live="polite">${canContinue ? "排名完整，可以继续。" : "请为五个结果分别选择 1–5 名。"}</p>`;
 
-  document.querySelectorAll(".rank-slider").forEach((input) => input.addEventListener("input", (event) => {
-    updateRank(scene, event.currentTarget.dataset.candidateId, Number(event.currentTarget.value));
-    syncRankControls(scene);
+  document.querySelectorAll(".rank-slider").forEach((input) => input.addEventListener("change", (event) => {
+    const error = updateRank(scene, event.currentTarget.dataset.candidateId, Number(event.currentTarget.value));
+    syncRankControls(scene, error);
   }));
   document.querySelector("#previous-scene").addEventListener("click", () => {
     currentScene -= 1;
@@ -164,10 +167,14 @@ function renderEvaluation() {
 
 function updateRank(scene, candidateId, nextRank) {
   const candidate = scene.candidates.find((item) => item.id === candidateId);
-  if (!candidate || nextRank === Number(candidate.rank || 0)) return;
+  if (!candidate || nextRank === Number(candidate.rank || 0)) return "";
   const occupied = nextRank && scene.candidates.find((item) => item.id !== candidateId && Number(item.rank || 0) === nextRank);
-  if (occupied) occupied.rank = Number(candidate.rank || 0);
+  if (occupied) {
+    candidate.rank = 0;
+    return `第 ${nextRank} 名已被其他结果使用，请选择未使用的名次。`;
+  }
   candidate.rank = nextRank;
+  return "";
 }
 
 async function saveAndAdvance(event) {
