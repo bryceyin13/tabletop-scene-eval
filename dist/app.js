@@ -204,7 +204,7 @@ async function saveAndAdvance(event) {
 }
 
 function evaluationComplete() {
-  root.innerHTML = `<section class="hero"><p class="eyebrow">Thank you</p><h1>本次测评已提交</h1><p class="lead">感谢你的评价。若要再完成一次独立测评，可以继续领取下一组场景。</p><div class="button-row"><button id="next-assignment" class="button">开始下一次测评</button><a class="button secondary" href="#/evaluate">返回首页</a></div></section>`;
+  root.innerHTML = `<section class="hero"><p class="eyebrow">Thank you</p><h1>本次测评已提交</h1><p class="lead">感谢你的评价。若要再完成一次独立测评，可以继续领取下一组场景。</p><div class="button-row"><button id="next-assignment" class="button">开始下一次测评</button><a class="button secondary" href="#/evaluate" data-participant-home>返回首页</a></div></section>`;
   document.querySelector("#next-assignment").addEventListener("click", async (event) => {
     const button = event.currentTarget;
     button.disabled = true;
@@ -543,5 +543,10 @@ function renderRoute() {
 }
 
 window.addEventListener("hashchange", renderRoute);
+document.addEventListener("click", (event) => {
+  if (!event.target.closest?.("[data-participant-home]") || adminOnly) return;
+  event.preventDefault();
+  renderParticipant();
+});
 if (!location.hash && !adminOnly) location.hash = "#/evaluate";
 renderRoute();
