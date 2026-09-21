@@ -2,6 +2,41 @@ const root = document.querySelector("#app");
 const config = window.EVAL_CONFIG ?? {};
 const configured = Boolean(config.SUPABASE_URL && config.SUPABASE_ANON_KEY);
 const adminOnly = Boolean(window.EVAL_ADMIN_ROUTE);
+const participantCopy = {
+  zh: {
+    nav: "参与测评", navLabel: "主导航", homeLabel: "回到测评首页", operationFailed: "操作未完成，请稍后再试。",
+    configTitle: "数据库尚未连接", configLead: "页面已经就绪，但还需要在 dist/config.js 填入 Supabase 项目地址和匿名 key，并运行一次数据准备与导入脚本。", configWarning: "这两个值用于连接公开的前端；请不要把 service role key 放进此文件。",
+    active: (code) => `检测到未完成的测评任务 <strong>${escapeHtml(code)}</strong>。继续不会领取新的任务。`,
+    title: "Tabletop 场景质量测评", lead: "每次测评包含 10 个场景。请根据参考图，对五个匿名结果做总体质量排序。",
+    rankRule: "1 = 最好，5 = 最差。", uniqueRule: "五个结果必须使用不同名次。", resumeRule: "每个浏览器会保留未完成的任务；完成后可再次开始下一次测评。", independentRule: "请按直觉独立评价，不需要知道生成方法。",
+    continue: "继续测评", start: "开始测评", claimOnly: "领取任务只会在点击“开始测评”后发生。", restoring: "正在恢复…", claiming: "正在领取…",
+    noTasksTitle: "当前没有可领取的测评任务", noTasksLead: "750 个预设任务均已领取或完成。请联系研究人员了解后续安排。",
+    currentRank: (rank) => `当前：第 ${rank} 名`, unranked: "当前：未排名", complete: "排名完整，可以继续。", incomplete: "请为五个结果分别选择 1–5 名。",
+    evaluate: "请评价当前场景", scene: (current, total) => `场景 ${current} / ${total}`, referenceAlt: "当前场景的参考图", reference: "参考图", candidatesLabel: "匿名结果与排名", candidate: (index) => `匿名结果 ${index}`, candidateRank: (index) => `匿名结果 ${index} 的排名`,
+    notRated: "未评", best: "最好", worst: "最差", previous: "上一场景", adjustHint: "如需调整，请先把原结果移到“未评”，再选择空出的名次。", submit: "提交测评", save: "保存并继续",
+    duplicate: (rank) => `第 ${rank} 名已被其他结果使用，请选择未使用的名次。`, saving: "正在保存…",
+    thankTitle: "本次测评已提交", thankLead: "感谢你的评价。若要再完成一次独立测评，可以继续领取下一组场景。", next: "开始下一次测评", returnHome: "返回首页",
+    preparing: "正在准备匿名测评…", connectFailed: "无法连接测评服务"
+  },
+  en: {
+    nav: "Take the Evaluation", navLabel: "Main navigation", homeLabel: "Return to the evaluation home page", operationFailed: "The operation could not be completed. Please try again.",
+    configTitle: "Database not connected", configLead: "The page is ready, but the Supabase project URL and anonymous key must be added to dist/config.js, and the data setup and import must be run once.", configWarning: "These values connect the public front end. Never put the service role key in this file.",
+    active: (code) => `An unfinished evaluation task <strong>${escapeHtml(code)}</strong> was found. Continuing will not claim a new task.`,
+    title: "Tabletop Scene Quality Evaluation", lead: "Each evaluation contains 10 scenes. Use the reference image to rank the overall quality of the five anonymous results.",
+    rankRule: "1 = best, 5 = worst.", uniqueRule: "Each result must receive a different rank.", resumeRule: "This browser will retain an unfinished task. After completing it, you may start another evaluation.", independentRule: "Please evaluate independently based on your first impression. You do not need to know which method produced each result.",
+    continue: "Continue Evaluation", start: "Start Evaluation", claimOnly: "A task is claimed only after you click “Start Evaluation.”", restoring: "Restoring…", claiming: "Claiming…",
+    noTasksTitle: "No evaluation tasks are currently available", noTasksLead: "All 750 preset tasks have already been claimed or completed. Please contact the research team for more information.",
+    currentRank: (rank) => `Current: rank ${rank}`, unranked: "Current: not ranked", complete: "Ranking complete. You can continue.", incomplete: "Assign each result a different rank from 1 to 5.",
+    evaluate: "Evaluate the current scene", scene: (current, total) => `Scene ${current} / ${total}`, referenceAlt: "Reference image for the current scene", reference: "Reference", candidatesLabel: "Anonymous results and rankings", candidate: (index) => `Anonymous result ${index}`, candidateRank: (index) => `Rank for anonymous result ${index}`,
+    notRated: "Not rated", best: "Best", worst: "Worst", previous: "Previous scene", adjustHint: "To change the order, move a result to “Not rated” first, then select the available rank.", submit: "Submit Evaluation", save: "Save and Continue",
+    duplicate: (rank) => `Rank ${rank} is already assigned to another result. Please choose an available rank.`, saving: "Saving…",
+    thankTitle: "Your evaluation has been submitted", thankLead: "Thank you for your evaluation. You may claim another group of scenes to complete a separate evaluation.", next: "Start Another Evaluation", returnHome: "Return Home",
+    preparing: "Preparing the anonymous evaluation…", connectFailed: "Unable to connect to the evaluation service"
+  }
+};
+let language = adminOnly ? "zh" : localStorage.getItem("tabletop-eval-language") === "en" ? "en" : "zh";
+let participantScreen = "loading";
+const p = (key, ...args) => typeof participantCopy[language][key] === "function" ? participantCopy[language][key](...args) : participantCopy[language][key];
 let supabase;
 let evaluation;
 let currentScene = 0;
@@ -14,7 +49,7 @@ const escapeHtml = (value = "") => String(value)
   .replaceAll('"', "&quot;")
   .replaceAll("'", "&#039;");
 
-const friendlyError = (error) => error?.message || "操作未完成，请稍后再试。";
+const friendlyError = (error) => error?.message || p("operationFailed");
 const status = (message, type = "") => `<p class="status ${type}">${escapeHtml(message)}</p>`;
 
 async function db() {
@@ -50,30 +85,31 @@ async function rpc(name, args = {}) {
 }
 
 function configNotice() {
-  return `<section class="hero"><p class="eyebrow">Configuration required</p><h1>数据库尚未连接</h1><p class="lead">页面已经就绪，但还需要在 <code>dist/config.js</code> 填入 Supabase 项目地址和匿名 key，并运行一次数据准备与导入脚本。</p><p class="notice">这两个值用于连接公开的前端；请不要把 service role key 放进此文件。</p></section>`;
+  return `<section class="hero"><p class="eyebrow">Configuration required</p><h1>${p("configTitle")}</h1><p class="lead">${p("configLead")}</p><p class="notice">${p("configWarning")}</p></section>`;
 }
 
 function participantWelcome(active) {
+  participantScreen = "welcome";
   const resume = active
-    ? `<p class="notice">检测到未完成的测评任务 <strong>${escapeHtml(active.code)}</strong>。继续不会领取新的任务。</p>`
+    ? `<p class="notice">${p("active", active.code)}</p>`
     : "";
   root.innerHTML = `<section class="hero">
     <p class="eyebrow">Anonymous quality study</p>
-    <h1>Tabletop 场景质量测评</h1>
-    <p class="lead">每次测评包含 10 个场景。请根据参考图，对五个匿名结果做总体质量排序。</p>
+    <h1>${p("title")}</h1>
+    <p class="lead">${p("lead")}</p>
     <ul class="rules">
-      <li><strong>1 = 最好，5 = 最差。</strong>五个结果必须使用不同名次。</li>
-      <li>每个浏览器会保留未完成的任务；完成后可再次开始下一次测评。</li>
-      <li>请按直觉独立评价，不需要知道生成方法。</li>
+      <li><strong>${p("rankRule")}</strong> ${p("uniqueRule")}</li>
+      <li>${p("resumeRule")}</li>
+      <li>${p("independentRule")}</li>
     </ul>
     ${resume}
-    <div class="button-row"><button class="button" id="start-evaluation">${active ? "继续测评" : "开始测评"}</button></div>
-    ${status("领取任务只会在点击“开始测评”后发生。")}
+    <div class="button-row"><button class="button" id="start-evaluation">${active ? p("continue") : p("start")}</button></div>
+    ${status(p("claimOnly"))}
   </section>`;
   document.querySelector("#start-evaluation").addEventListener("click", async (event) => {
     const button = event.currentTarget;
     button.disabled = true;
-    button.textContent = active ? "正在恢复…" : "正在领取…";
+    button.textContent = active ? p("restoring") : p("claiming");
     try {
       evaluation = active || await rpc("claim_assignment");
       if (!evaluation) {
@@ -84,14 +120,15 @@ function participantWelcome(active) {
       renderEvaluation();
     } catch (error) {
       button.disabled = false;
-      button.textContent = active ? "继续测评" : "开始测评";
+      button.textContent = active ? p("continue") : p("start");
       document.querySelector(".status").outerHTML = status(friendlyError(error), "error");
     }
   });
 }
 
 function participantUnavailable() {
-  root.innerHTML = `<section class="hero"><p class="eyebrow">Study capacity reached</p><h1>当前没有可领取的测评任务</h1><p class="lead">750 个预设任务均已领取或完成。请联系研究人员了解后续安排。</p></section>`;
+  participantScreen = "unavailable";
+  root.innerHTML = `<section class="hero"><p class="eyebrow">Study capacity reached</p><h1>${p("noTasksTitle")}</h1><p class="lead">${p("noTasksLead")}</p></section>`;
 }
 
 function firstUnfinishedScene(payload) {
@@ -105,7 +142,7 @@ function validRanks(scene) {
 }
 
 function rankText(rank) {
-  return rank ? `当前：第 ${rank} 名` : "当前：未排名";
+  return rank ? p("currentRank", rank) : p("unranked");
 }
 
 function syncRankControls(scene, error = "") {
@@ -123,36 +160,37 @@ function syncRankControls(scene, error = "") {
   if (nextButton) nextButton.disabled = !complete;
   const summary = document.querySelector("#evaluation-status");
   if (summary) {
-    summary.textContent = error || (complete ? "排名完整，可以继续。" : "请为五个结果分别选择 1–5 名。");
+    summary.textContent = error || (complete ? p("complete") : p("incomplete"));
     summary.classList.toggle("error", Boolean(error));
   }
 }
 
 function renderEvaluation() {
+  participantScreen = "evaluation";
   const scene = evaluation.scenes[currentScene];
   const completed = evaluation.scenes.filter(validRanks).length;
   const canContinue = validRanks(scene);
   root.innerHTML = `<section class="evaluation-header">
-      <div><p class="eyebrow">Assignment ${escapeHtml(evaluation.code)}</p><h2>请评价当前场景</h2></div>
-      <div class="progress">场景 ${currentScene + 1} / ${evaluation.scenes.length}<div class="progress-bar"><span style="width:${(completed / evaluation.scenes.length) * 100}%"></span></div></div>
+      <div><p class="eyebrow">Assignment ${escapeHtml(evaluation.code)}</p><h2>${p("evaluate")}</h2></div>
+      <div class="progress">${p("scene", currentScene + 1, evaluation.scenes.length)}<div class="progress-bar"><span style="width:${(completed / evaluation.scenes.length) * 100}%"></span></div></div>
     </section>
-    <section class="reference card"><img src="${assetUrl(scene.reference_asset)}" alt="当前场景的参考图" /><p class="label">参考图</p></section>
-    <section class="candidate-list" aria-label="匿名结果与排名">
+    <section class="reference card"><img src="${assetUrl(scene.reference_asset)}" alt="${p("referenceAlt")}" /><p class="label">${p("reference")}</p></section>
+    <section class="candidate-list" aria-label="${p("candidatesLabel")}">
       ${scene.candidates.map((candidate, index) => `<article class="candidate">
-        <img src="${assetUrl(candidate.asset_file)}" alt="匿名结果 ${index + 1}" />
+        <img src="${assetUrl(candidate.asset_file)}" alt="${p("candidate", index + 1)}" />
         <div class="rank-control">
-          <div class="rank-head"><strong>匿名结果 ${index + 1}</strong><span class="rank-value">${rankText(candidate.rank)}</span></div>
-          <input class="rank-slider" data-candidate-id="${candidate.id}" type="range" min="0" max="5" step="1" value="${candidate.rank || 0}" aria-label="匿名结果 ${index + 1} 的排名" aria-valuetext="${rankText(candidate.rank)}" />
-          <div class="rank-scale" aria-hidden="true"><span>未评</span><span>1<small>最好</small></span><span>2</span><span>3</span><span>4</span><span>5<small>最差</small></span></div>
+          <div class="rank-head"><strong>${p("candidate", index + 1)}</strong><span class="rank-value">${rankText(candidate.rank)}</span></div>
+          <input class="rank-slider" data-candidate-id="${candidate.id}" type="range" min="0" max="5" step="1" value="${candidate.rank || 0}" aria-label="${p("candidateRank", index + 1)}" aria-valuetext="${rankText(candidate.rank)}" />
+          <div class="rank-scale" aria-hidden="true"><span>${p("notRated")}</span><span>1<small>${p("best")}</small></span><span>2</span><span>3</span><span>4</span><span>5<small>${p("worst")}</small></span></div>
         </div>
       </article>`).join("")}
     </section>
     <section class="evaluation-actions">
-      <button class="button secondary" id="previous-scene" ${currentScene === 0 ? "disabled" : ""}>上一场景</button>
-      <span class="hint">如需调整，请先把原结果移到“未评”，再选择空出的名次。</span>
-      <button class="button" id="next-scene" ${canContinue ? "" : "disabled"}>${currentScene === evaluation.scenes.length - 1 ? "提交测评" : "保存并继续"}</button>
+      <button class="button secondary" id="previous-scene" ${currentScene === 0 ? "disabled" : ""}>${p("previous")}</button>
+      <span class="hint">${p("adjustHint")}</span>
+      <button class="button" id="next-scene" ${canContinue ? "" : "disabled"}>${currentScene === evaluation.scenes.length - 1 ? p("submit") : p("save")}</button>
     </section>
-    <p id="evaluation-status" class="status" role="status" aria-live="polite">${canContinue ? "排名完整，可以继续。" : "请为五个结果分别选择 1–5 名。"}</p>`;
+    <p id="evaluation-status" class="status" role="status" aria-live="polite">${canContinue ? p("complete") : p("incomplete")}</p>`;
 
   document.querySelectorAll(".rank-slider").forEach((input) => input.addEventListener("change", (event) => {
     const error = updateRank(scene, event.currentTarget.dataset.candidateId, Number(event.currentTarget.value));
@@ -171,7 +209,7 @@ function updateRank(scene, candidateId, nextRank) {
   const occupied = nextRank && scene.candidates.find((item) => item.id !== candidateId && Number(item.rank || 0) === nextRank);
   if (occupied) {
     candidate.rank = 0;
-    return `第 ${nextRank} 名已被其他结果使用，请选择未使用的名次。`;
+    return p("duplicate", nextRank);
   }
   candidate.rank = nextRank;
   return "";
@@ -182,7 +220,7 @@ async function saveAndAdvance(event) {
   if (!validRanks(scene)) return;
   const button = event.currentTarget;
   button.disabled = true;
-  button.textContent = "正在保存…";
+  button.textContent = p("saving");
   try {
     await rpc("save_scene_response", {
       p_assignment_id: evaluation.assignment_id,
@@ -198,17 +236,18 @@ async function saveAndAdvance(event) {
     evaluationComplete();
   } catch (error) {
     button.disabled = false;
-    button.textContent = currentScene === evaluation.scenes.length - 1 ? "提交测评" : "保存并继续";
+    button.textContent = currentScene === evaluation.scenes.length - 1 ? p("submit") : p("save");
     document.querySelector(".status").outerHTML = status(friendlyError(error), "error");
   }
 }
 
 function evaluationComplete() {
-  root.innerHTML = `<section class="hero"><p class="eyebrow">Thank you</p><h1>本次测评已提交</h1><p class="lead">感谢你的评价。若要再完成一次独立测评，可以继续领取下一组场景。</p><div class="button-row"><button id="next-assignment" class="button">开始下一次测评</button><a class="button secondary" href="#/evaluate" data-participant-home>返回首页</a></div></section>`;
+  participantScreen = "complete";
+  root.innerHTML = `<section class="hero"><p class="eyebrow">Thank you</p><h1>${p("thankTitle")}</h1><p class="lead">${p("thankLead")}</p><div class="button-row"><button id="next-assignment" class="button">${p("next")}</button><a class="button secondary" href="#/evaluate" data-participant-home>${p("returnHome")}</a></div></section>`;
   document.querySelector("#next-assignment").addEventListener("click", async (event) => {
     const button = event.currentTarget;
     button.disabled = true;
-    button.textContent = "正在领取…";
+    button.textContent = p("claiming");
     try {
       evaluation = await rpc("claim_assignment");
       if (!evaluation) return participantUnavailable();
@@ -216,7 +255,7 @@ function evaluationComplete() {
       renderEvaluation();
     } catch (error) {
       button.disabled = false;
-      button.textContent = "开始下一次测评";
+      button.textContent = p("next");
       root.insertAdjacentHTML("beforeend", status(friendlyError(error), "error"));
     }
   });
@@ -224,12 +263,13 @@ function evaluationComplete() {
 
 async function renderParticipant() {
   if (!configured) return void (root.innerHTML = configNotice());
-  root.innerHTML = `<section class="hero"><p class="lead">正在准备匿名测评…</p></section>`;
+  participantScreen = "loading";
+  root.innerHTML = `<section class="hero"><p class="lead">${p("preparing")}</p></section>`;
   try {
     await ensureParticipant();
     participantWelcome(await rpc("get_active_assignment"));
   } catch (error) {
-    root.innerHTML = `<section class="hero"><h1>无法连接测评服务</h1>${status(friendlyError(error), "error")}</section>`;
+    root.innerHTML = `<section class="hero"><h1>${p("connectFailed")}</h1>${status(friendlyError(error), "error")}</section>`;
   }
 }
 
@@ -537,6 +577,24 @@ async function renderAdmin() {
   }
 }
 
+function syncLanguageChrome() {
+  if (adminOnly) return;
+  document.documentElement.lang = language === "en" ? "en" : "zh-CN";
+  document.querySelector(".brand")?.setAttribute("aria-label", p("homeLabel"));
+  const nav = document.querySelector("nav");
+  nav?.setAttribute("aria-label", p("navLabel"));
+  const home = nav?.querySelector("[data-participant-home]");
+  if (home) home.textContent = p("nav");
+  document.querySelectorAll("[data-language]").forEach((button) => button.setAttribute("aria-current", String(button.dataset.language === language)));
+}
+
+function renderParticipantScreen() {
+  if (participantScreen === "evaluation" && evaluation) renderEvaluation();
+  else if (participantScreen === "complete") evaluationComplete();
+  else if (participantScreen === "unavailable") participantUnavailable();
+  else renderParticipant();
+}
+
 function renderRoute() {
   if (adminOnly) renderAdmin();
   else renderParticipant();
@@ -544,9 +602,19 @@ function renderRoute() {
 
 window.addEventListener("hashchange", renderRoute);
 document.addEventListener("click", (event) => {
+  const languageButton = event.target.closest?.("[data-language]");
+  if (languageButton && !adminOnly) {
+    language = languageButton.dataset.language === "en" ? "en" : "zh";
+    localStorage.setItem("tabletop-eval-language", language);
+    document.querySelector(".language-menu")?.removeAttribute("open");
+    syncLanguageChrome();
+    renderParticipantScreen();
+    return;
+  }
   if (!event.target.closest?.("[data-participant-home]") || adminOnly) return;
   event.preventDefault();
   renderParticipant();
 });
 if (!location.hash && !adminOnly) location.hash = "#/evaluate";
+syncLanguageChrome();
 renderRoute();

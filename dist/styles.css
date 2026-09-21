@@ -20,9 +20,16 @@ a { color: inherit; }
 .site-header { min-height: 68px; padding: 0 5vw; display: flex; align-items: center; justify-content: space-between; background: var(--surface); border-bottom: 1px solid var(--line); }
 .brand { color: var(--ink); font-size: 1.08rem; font-weight: 760; letter-spacing: -.03em; text-decoration: none; }
 .brand span { color: var(--accent-dark); }
-nav { display: flex; gap: 1.25rem; }
+nav { display: flex; align-items: center; gap: 1.25rem; }
 nav a { color: var(--muted); font-size: .9rem; text-decoration: none; }
 nav a:hover { color: var(--ink); }
+.language-menu { position: relative; color: var(--muted); font-size: .9rem; }
+.language-menu summary { cursor: pointer; list-style: none; }
+.language-menu summary::-webkit-details-marker { display: none; }
+.language-menu summary:hover, .language-menu[open] summary { color: var(--ink); }
+.language-options { position: absolute; z-index: 10; top: calc(100% + .65rem); right: 0; min-width: 112px; overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 28px rgb(16 21 27 / 12%); }
+.language-options button { width: 100%; padding: .65rem .8rem; color: var(--ink); text-align: left; background: transparent; border: 0; }
+.language-options button:hover, .language-options button[aria-current="true"] { background: #edf0f2; }
 .app-shell { width: min(1180px, 92vw); margin: 0 auto; padding: 3.25rem 0 5rem; }
 
 .hero, .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 8px 28px rgb(16 21 27 / 5%); }
